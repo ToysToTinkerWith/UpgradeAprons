@@ -5,10 +5,20 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "npx --yes firebase-tools@latest emulators:start --only hosting",
+    "lint": "eslint",
+    "firebase:login": "npx --yes firebase-tools@latest login",
+    "preview": "npm run build && npx --yes firebase-tools@latest emulators:start --only hosting",
+    "deploy": "npm run build && npx --yes firebase-tools@latest deploy --only hosting",
+    "functions:install": "npm --prefix functions install",
+    "functions:ci": "npm --prefix functions ci",
+    "deploy:functions": "npm run functions:ci && npx --yes firebase-tools@latest deploy --only functions",
+    "deploy:all": "npm run build && npm run functions:ci && npx --yes firebase-tools@latest deploy --only hosting,functions"
   },
   "dependencies": {
+    "firebase": "^12.17.1",
+    "framer-motion": "^13.1.0",
+    "lucide-react": "^1.31.0",
     "next": "16.3.1",
     "react": "19.2.8",
     "react-dom": "19.2.8"

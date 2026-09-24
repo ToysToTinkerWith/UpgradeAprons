@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">Built to last apron icon</title>
+  <g fill="none" stroke="#d6a25f" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M36 14h24l5 20 12 9-6.5 38h-45L19 43l12-9 5-20Z" />
+    <path d="M36 14c2.5 10 6.5 15 12 15s9.5-5 12-15" />
+    <path d="M37.5 51h21v18h-21z" />
+    <path d="M26 43c4 3 7 6 9 10" opacity=".42" />
+    <path d="M70 43c-4 3-7 6-9 10" opacity=".42" />
+  </g>
+</svg>

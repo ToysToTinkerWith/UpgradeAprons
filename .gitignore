@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/functions/node_modules
 /.pnp
 .pnp.*
 .yarn/*
@@ -30,8 +31,27 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
+# firebase
+.firebase/
+
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# local diagnostics and generated image reviews
+*.log
+/tmp/
+__pycache__/
+*.py[cod]
+/product-intake/backups/
+/product-intake/**/*.zip
+
+# service-account credentials
+*service-account*.json
+*serviceAccount*.json
+*firebase-adminsdk*.json
+*.key
+*.p12
 
 # vercel
 .vercel

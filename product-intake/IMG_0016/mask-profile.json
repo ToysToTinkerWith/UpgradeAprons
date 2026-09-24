@@ -1,0 +1,22 @@
+{
+  "reference_width": 1368,
+  "reference_height": 1824,
+  "blue_minus_green": 3,
+  "dark_threshold": 90,
+  "red_minus_green": 18,
+  "red_region_max_green": 110,
+  "min_component_pixels": 250,
+  "max_highlight_hole_pixels": 1800,
+  "padding_pixels": 48,
+  "edge_cleanup_radius": 2,
+  "edge_trim_pixels": 1,
+  "background_cleanup_regions": [
+    {"bounds": [500, 70, 880, 175], "max_green": 135},
+    {"bounds": [500, 175, 900, 430], "max_green": 130, "max_blue_minus_green": 12, "edge_band_pixels": 6},
+    {"bounds": [0, 950, 1368, 1824], "max_green": 95, "min_green_minus_blue": 0, "min_red_minus_blue": 16, "edge_band_pixels": 5}
+  ],
+  "protect_polygons": [],
+  "remove_polygons": [
+    [[614, 143], [638, 135], [670, 129], [700, 131], [732, 139], [756, 148], [774, 157], [778, 176], [800, 260], [835, 438], [586, 440], [608, 250]]
+  ]
+}

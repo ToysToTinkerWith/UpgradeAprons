@@ -1,0 +1,27 @@
+{
+  "output_version": 3,
+  "mode": "light-backdrop", "dark_threshold": 125,
+  "reference_width": 1368, "reference_height": 1824,
+  "min_component_pixels": 150, "max_highlight_hole_pixels": 2500,
+  "final_component_min_pixels": 64,
+  "padding_pixels": 64, "edge_cleanup_radius": 1, "edge_trim_pixels": 1,
+  "protect_polygons": [[[510,355],[840,350],[915,740],[445,740],[475,510]],[[855,470],[880,470],[915,580],[930,630],[860,640]],[[480,500],[865,500],[865,735],[470,735]],[[190,935],[650,940],[641,1370],[150,1370]],[[770,950],[1150,950],[1180,1375],[780,1375]]],
+  "background_cleanup_regions": [
+    {"bounds": [450,20,900,140], "max_green": 90},
+    {"bounds": [400,0,1050,290], "min_red_minus_blue": 8},
+    {
+      "bounds": [0,780,147,1740],
+      "polygon": [[0,780],[147,780],[142,815],[128,900],[107,1100],[80,1300],[57,1480],[49,1740],[0,1740]],
+      "min_red_minus_blue": 5,
+      "max_green": 70
+    }
+  ],
+  "protect_ellipses": [[497,343,530,377],[824,335,856,367]],
+  "protect_strokes": [
+    {"points": [[513,357],[534,321]], "width": 7},
+    {"points": [[799,321],[827,334],[838,349]], "width": 8},
+    {"points": [[526,301],[519,312],[524,317],[545,329],[551,327],[561,317]], "width": 3},
+    {"points": [[774,317],[786,327],[790,329],[797,327],[809,316],[811,310],[800,299]], "width": 4}
+  ],
+  "remove_polygons": []
+}

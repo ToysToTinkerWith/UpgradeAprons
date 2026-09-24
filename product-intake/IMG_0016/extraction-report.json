@@ -1,0 +1,16 @@
+{
+  "source": "product-intake/IMG_0016/original.jpg",
+  "source_size": [
+    2160,
+    2880
+  ],
+  "output_size": [
+    2256,
+    2976
+  ],
+  "foreground_components_before_cleanup": 87,
+  "transparent_pixel_fraction": 0.41905349794238683,
+  "foreground_rgb_exact_match": true,
+  "png_bytes": 3892699,
+  "webp_bytes": 1723548
+}

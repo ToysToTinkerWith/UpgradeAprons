@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "upgradeaprons"
+  },
+  "targets": {
+    "upgradeaprons": {
+      "hosting": {
+        "upgradeaprons": [
+          "upgradeaprons"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

@@ -1,0 +1,16 @@
+{
+  "source": "product-intake/cobalt-crimson-standard/original.jpg",
+  "source_size": [
+    2880,
+    3840
+  ],
+  "output_size": [
+    3008,
+    3968
+  ],
+  "foreground_components_before_cleanup": 82,
+  "transparent_pixel_fraction": 0.4174263057002315,
+  "foreground_rgb_exact_match": true,
+  "png_bytes": 9581104,
+  "webp_bytes": 3712494
+}

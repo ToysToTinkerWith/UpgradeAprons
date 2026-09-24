@@ -1,0 +1,28 @@
+{
+  "mode": "warm-backdrop",
+  "blue_minus_red": -24,
+  "grabcut_refine": true,
+  "reference_width": 1368,
+  "reference_height": 1824,
+  "min_component_pixels": 150,
+  "max_highlight_hole_pixels": 2500,
+  "padding_pixels": 64,
+  "edge_cleanup_radius": 1,
+  "edge_trim_pixels": 1,
+  "protect_polygons": [
+    [[490,1300],[865,1300],[870,1630],[490,1630]],
+    [[569,58],[749,55],[751,100],[568,98]],
+    [[450,1680],[970,1680],[970,1730],[450,1730]]
+  ],
+  "protect_ellipses": [[163,813,214,861],[1144,820,1196,869]],
+  "remove_polygons": [
+    [[0,0],[0,382],[499,382],[528,99],[568,55],[749,52],[796,94],[851,382],[1368,382],[1368,0]],
+    [[570,103],[751,103],[805,382],[545,379]]
+  ],
+  "background_cleanup_regions": [
+    {"bounds": [0,0,1368,1824], "min_red_minus_blue": 24, "edge_band_pixels": 3},
+    {"bounds": [490,103,860,380], "max_green": 90, "min_red_minus_blue": 8, "edge_band_pixels": 16},
+    {"bounds": [60,440,195,795], "max_green": 40, "min_red_minus_blue": 6},
+    {"bounds": [1150,430,1245,805], "max_green": 40, "min_red_minus_blue": 6}
+  ]
+}

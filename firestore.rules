@@ -1,0 +1,48 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isOwner() {
+      return request.auth != null &&
+        request.auth.token.email == "upgrade@whidbey.com";
+    }
+
+    match /products/{productId} {
+      allow read: if true;
+      allow create, delete: if isOwner();
+      allow update: if isOwner() && !request.resource.data.diff(resource.data).affectedKeys().hasAny([
+        'image', 'imageUrl', 'imageStoragePath', 'alternateImages'
+      ]);
+    }
+
+    match /siteContent/{contentId} {
+      allow read: if true;
+      allow create: if isOwner() && request.resource.data.kind == 'text' &&
+        request.resource.data.value is string;
+      allow update: if isOwner() && resource.data.kind == 'text' &&
+        request.resource.data.kind == 'text' && request.resource.data.value is string &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'value', 'label', 'defaultValue', 'updatedAt', 'createdAt', 'route'
+        ]);
+    }
+
+    match /directMessages/{messageId} {
+      allow create: if true;
+      allow read, update, delete: if isOwner();
+    }
+
+    match /customApronDesigns/{designId} {
+      allow create: if true;
+      allow read, update, delete: if isOwner();
+    }
+
+    match /productInquiries/{inquiryId} {
+      allow create: if true;
+      allow read, update, delete: if isOwner();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

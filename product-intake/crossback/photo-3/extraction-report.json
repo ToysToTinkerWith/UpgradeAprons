@@ -1,0 +1,16 @@
+{
+  "source": "product-intake\\crossback\\photo-3\\original.jpg",
+  "source_size": [
+    2880,
+    3840
+  ],
+  "output_size": [
+    3008,
+    3968
+  ],
+  "foreground_components_before_cleanup": 394,
+  "transparent_pixel_fraction": 0.46893681278935184,
+  "foreground_rgb_exact_match": true,
+  "png_bytes": 8372245,
+  "webp_bytes": 3385758
+}
