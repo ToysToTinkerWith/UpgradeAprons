@@ -1,4 +1,5 @@
 import catalog from "@/data/product-catalog.json";
+import { normalizeStandardSize } from "@/lib/product-sizing";
 
 export type ApronProduct = {
   slug: string;
@@ -19,6 +20,11 @@ export type ApronProduct = {
   layoutTags: string[];
   basePrice?: number;
   limitedEdition?: boolean;
+  sold?: boolean;
+  showcaseOnly?: boolean;
+  standardSize?: "small" | "large" | null;
+  standardSizeEstimated?: boolean;
+  measurements?: { bodyWidthInches: number; bodyLengthInches: number } | null;
   imageUrl?: string;
   imageStoragePath?: string;
 };
@@ -32,7 +38,10 @@ export type ApronCategory = {
   accent: string;
 };
 
-export const apronProducts: ApronProduct[] = catalog;
+export const apronProducts: ApronProduct[] = catalog.map(product => ({
+  ...product,
+  standardSize: normalizeStandardSize(product.standardSize),
+}));
 
 export const apronCategories: ApronCategory[] = [
   {
@@ -40,7 +49,7 @@ export const apronCategories: ApronCategory[] = [
     title: "Crossback",
     eyebrow: "Crossed shoulder straps",
     description:
-      "Full-front leather aprons with crossed webbing straps, clip-on shoulder attachments, and distinctive pocket layouts.",
+      "Handcrafted crossback leather aprons with crossed webbing straps, clip-on shoulder attachments, and practical pockets for kitchens, gardens, and workshops.",
     image: "/images/products/saddle-sky-crossback-v2.webp",
     accent: "#78a9c4",
   },
@@ -49,7 +58,7 @@ export const apronCategories: ApronCategory[] = [
     title: "Standard",
     eyebrow: "Classic apron",
     description:
-      "Classic neck-strap leather aprons with waist ties, riveted strap tabs, and full-front pocket layouts.",
+      "Handmade standard leather aprons with classic neck straps, waist ties, and full-front pocket layouts for cooking, gardening, and creative work.",
     image: "/images/products/burgundy-bloom-standard-v3.webp",
     accent: "#b95438",
   },
@@ -58,9 +67,18 @@ export const apronCategories: ApronCategory[] = [
     title: "Half-Aprons",
     eyebrow: "Waist-height apron",
     description:
-      "Waist-height leather aprons with tie straps, broad front panels, and practical pocket arrangements.",
+      "Handcrafted leather half aprons with waist-height coverage and practical pockets for gardening, market stalls, and studio work. Explore distinctive color combinations.",
     image: "/images/products/lavender-colorblock-half-apron-v1.webp",
     accent: "#2b8c86",
+  },
+  {
+    slug: "custom",
+    title: "Custom",
+    eyebrow: "Completed commissions",
+    description:
+      "One-of-a-kind aprons made around individual tools, tasks, and ideas. These sold commissions are here for inspiration. Start a custom design to create a piece of your own.",
+    image: "/images/products/graphite-utility-custom-v1.webp",
+    accent: "#8ca9b9",
   },
 ];
 

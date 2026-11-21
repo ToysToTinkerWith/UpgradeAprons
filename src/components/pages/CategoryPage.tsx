@@ -1,16 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Hammer, Ruler, Scissors, type LucideIcon } from "lucide-react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { ProductImageViewer } from "@/components/ProductImageViewer";
 import { ProductPrice } from "@/components/ProductPrice";
+import { ProductDetailsLink } from "@/components/ProductDetailsLink";
 import { CatalogEmptyState } from "@/components/CatalogEmptyState";
 import { useProductCatalog } from "@/lib/product-catalog";
 import { getProductImageSrc } from "@/lib/product-pricing";
 import type { ApronCategory, ApronProduct } from "@/lib/site-data";
-import { getProductHref } from "@/lib/site-data";
+import { StandardSizeFilter, type SizeFilter } from "@/components/StandardSizeFilter";
+import { getStandardSizeLabel } from "@/lib/product-sizing";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -65,6 +68,10 @@ export function CategoryPage({
 }) {
   const reduceMotion = useReducedMotion();
   const { products: catalogProducts } = useProductCatalog(products);
+  const [size, setSize] = useState<SizeFilter>("all");
+  const visibleProducts = category.slug === "standard" && size !== "all"
+    ? catalogProducts.filter(product => product.standardSize === size)
+    : catalogProducts;
   const Icon =
     category.slug === "half-apron"
       ? Scissors
@@ -92,7 +99,7 @@ export function CategoryPage({
         className="mx-auto max-w-[112rem]"
         variants={stagger}
         initial={reduceMotion ? false : "hidden"}
-        animate={reduceMotion ? undefined : "visible"}
+        animate="visible"
       >
         <motion.div variants={fadeUp}>
           <Link
@@ -122,12 +129,16 @@ export function CategoryPage({
           </motion.div>
         </section>
 
+        {category.slug === "standard" && <StandardSizeFilter products={catalogProducts} value={size} onChange={setSize} />}
+        {category.slug === "custom" && <Link href="/custom" className="mt-8 inline-flex min-h-12 items-center gap-3 rounded-md bg-[#d6a25f] px-5 py-3 text-sm font-semibold !text-[#050403] hover:bg-[#efbd75]">Start your custom design</Link>}
+
         <motion.section
           className="mt-16 grid gap-6 md:grid-cols-2"
           variants={stagger}
         >
           {catalogProducts.length === 0 ? <CatalogEmptyState /> : null}
-          {catalogProducts.map((product) => (
+          {catalogProducts.length > 0 && visibleProducts.length === 0 ? <p role="status" className="text-[#d8cabc]">No aprons have a confirmed {size} size yet. Browse All sizes or contact us for fit advice.</p> : null}
+          {visibleProducts.map((product) => (
             <motion.article
               className="group grid overflow-hidden rounded-lg border border-white/16 bg-[#0e0906]/78 shadow-[0_24px_62px_rgba(0,0,0,0.34)] backdrop-blur-md lg:grid-cols-[0.92fr_1fr]"
               data-product-slug={product.slug}
@@ -135,6 +146,7 @@ export function CategoryPage({
               variants={cardReveal}
             >
               <ProductImageViewer
+                sold={product.sold}
                 src={getProductImageSrc(product)}
                 alt={product.title}
                 sizes="(min-width: 1024px) 30vw, 100vw"
@@ -159,13 +171,8 @@ export function CategoryPage({
                   <span data-product-field="description">{product.description}</span>
                 </p>
                 <ProductPrice product={product} className="mt-6" />
-                <Link
-                  href={getProductHref(product)}
-                  className="mt-auto inline-flex items-center gap-3 pt-8 text-sm font-semibold uppercase tracking-[0.18em] text-[#e7ad61] transition hover:text-white"
-                >
-                  <Scissors size={18} aria-hidden="true" />
-                  View Details
-                </Link>
+                {category.slug === "standard" && <p data-site-static className="mt-3 text-sm text-[#d8cabc]">{getStandardSizeLabel(product)}</p>}
+                <ProductDetailsLink product={product} />
               </div>
             </motion.article>
           ))}

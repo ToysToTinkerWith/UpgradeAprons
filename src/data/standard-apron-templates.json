@@ -1,0 +1,4 @@
+{
+  "small": { "totalWidth": 20.5, "totalHeight": 26, "bibWidth": 7.5, "bodyHeight": 16 },
+  "large": { "totalWidth": 22.5, "totalHeight": 28, "bibWidth": 9, "bodyHeight": 17 }
+}

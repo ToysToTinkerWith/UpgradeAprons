@@ -1,0 +1,17 @@
+{
+  "source": "product-intake\\standard-october\\originals\\2-Photo-2.jpg",
+  "source_size": [
+    2880,
+    3840
+  ],
+  "output_size": [
+    3008,
+    3968
+  ],
+  "foreground_components_before_cleanup": 178,
+  "transparent_pixel_fraction": 0.5202583369502315,
+  "foreground_rgb_exact_match": true,
+  "png_bytes": 10032646,
+  "webp_bytes": 3092298,
+  "reviewed_strap_contours": true
+}

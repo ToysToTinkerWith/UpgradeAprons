@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { getFirebaseFirestore } from "@/lib/firebase";
 import { getProductBasePrice } from "@/lib/product-pricing";
 import type { ApronProduct } from "@/lib/site-data";
+import { normalizeMeasurements, normalizeStandardSize } from "@/lib/product-sizing";
 
 export const PRODUCT_COLLECTION = "products";
 export const OWNER_EMAIL = "upgrade@whidbey.com";
@@ -80,9 +81,18 @@ export function normalizeProductRecord(
       ...baseProduct,
       basePrice: getProductBasePrice(baseProduct),
       limitedEdition: Boolean(baseProduct.limitedEdition),
+      sold: Boolean(baseProduct.showcaseOnly || baseProduct.sold),
+      standardSize: normalizeStandardSize(baseProduct.standardSize),
+      standardSizeEstimated: Boolean(normalizeStandardSize(baseProduct.standardSize) && baseProduct.standardSizeEstimated),
+      measurements: normalizeMeasurements(baseProduct.measurements),
     };
   }
 
+  const standardSize = normalizeStandardSize(record.standardSize === undefined ? baseProduct.standardSize : record.standardSize);
+  const standardSizeEstimated = Boolean(standardSize && booleanValue(
+    record.standardSizeEstimated,
+    record.standardSize === undefined && Boolean(baseProduct.standardSizeEstimated),
+  ));
   const merged = {
     ...baseProduct,
     slug: baseProduct.slug,
@@ -108,6 +118,10 @@ export function normalizeProductRecord(
     details: stringArrayValue(record.details, baseProduct.details),
     specs: specsValue(record.specs, baseProduct.specs),
     layoutTags: stringArrayValue(record.layoutTags, baseProduct.layoutTags),
+    sold: baseProduct.showcaseOnly || booleanValue(record.sold, Boolean(baseProduct.sold)),
+    standardSize,
+    standardSizeEstimated,
+    measurements: normalizeMeasurements(record.measurements === undefined ? baseProduct.measurements : record.measurements),
     limitedEdition: booleanValue(
       record.limitedEdition,
       Boolean(baseProduct.limitedEdition),

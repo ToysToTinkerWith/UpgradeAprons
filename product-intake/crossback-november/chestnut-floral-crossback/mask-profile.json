@@ -1,0 +1,115 @@
+{
+  "reference_width": 1368,
+  "reference_height": 1824,
+  "min_component_pixels": 80,
+  "max_highlight_hole_pixels": 700,
+  "padding_pixels": 64,
+  "edge_cleanup_radius": 0,
+  "edge_trim_pixels": 1,
+  "grabcut_refine": true,
+  "mode": "burgundy",
+  "blue_minus_green": 25,
+  "dark_threshold": 44,
+  "red_minus_green": 7,
+  "red_region_max_green": 255,
+  "protect_polygons": [
+    [
+      [
+        345,
+        807
+      ],
+      [
+        749,
+        809
+      ],
+      [
+        750,
+        708
+      ],
+      [
+        899,
+        705
+      ],
+      [
+        907,
+        811
+      ],
+      [
+        1006,
+        812
+      ],
+      [
+        1038,
+        1162
+      ],
+      [
+        312,
+        1170
+      ]
+    ]
+  ],
+  "final_protect_paths": [
+    [
+      [
+        "M",
+        628,
+        17
+      ],
+      [
+        "C",
+        633,
+        21,
+        636,
+        25,
+        644,
+        30
+      ],
+      [
+        "L",
+        655,
+        38
+      ],
+      [
+        "L",
+        655,
+        59
+      ],
+      [
+        "C",
+        646,
+        51,
+        643,
+        33,
+        636,
+        27
+      ],
+      [
+        "L",
+        627,
+        20
+      ]
+    ]
+  ],
+  "background_cleanup_regions": [
+    {
+      "bounds": [
+        0,
+        660,
+        185,
+        1420
+      ],
+      "min_green_minus_red": -5,
+      "max_green": 59
+    },
+    {
+      "bounds": [
+        1187,
+        670,
+        1368,
+        1414
+      ],
+      "min_green_minus_red": -5,
+      "max_green": 59
+    }
+  ]
+}

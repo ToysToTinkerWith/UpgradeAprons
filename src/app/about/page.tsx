@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { AboutPage } from "@/components/pages/AboutPage";
 
-export const metadata: Metadata = {
-  title: "About | Upgrade Aprons",
+export const metadata = pageMetadata({
+  path: "/about",
+  title: "Handmade on Whidbey Island | Our Story",
   description:
-    "Learn about Upgrade Aprons, handmade genuine leather aprons shaped by decades of upholstery craft.",
-};
+    "Meet Crispin T. Roberts, the maker behind Upgrade Aprons. More than 40 years of upholstery craft shapes each handmade leather apron on Whidbey Island.",
+});
 
 export default function About() {
   return <AboutPage />;

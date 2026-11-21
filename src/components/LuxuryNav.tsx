@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Scissors, X } from "lucide-react";
+import { DiscoverMenu } from "@/components/DiscoverMenu";
 import {
   AnimatePresence,
   motion,
@@ -14,7 +15,7 @@ import {
 const navItems = [
   { label: "About", href: "/about" },
   { label: "Aprons", href: "/products" },
-  { label: "Events", href: "/events" },
+  { label: "Discover", href: "/events", isDiscover: true },
   { label: "Contact", href: "/contact" },
   { label: "Custom Orders", href: "/custom", isCta: true },
 ];
@@ -57,8 +58,8 @@ export function LuxuryNav() {
       data-site-scope="site-header"
       className="absolute inset-x-0 top-0 z-30 border-b border-[#d6a25f]/12 bg-[#050403]"
       initial={reduceMotion ? false : { opacity: 0, y: -16 }}
-      animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
-      transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: reduceMotion ? 0 : 0.65, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="mx-auto flex h-[96px] w-full max-w-[118rem] items-center gap-2 px-4 min-[360px]:px-6 sm:gap-6 sm:px-10 lg:px-12">
         <motion.div
@@ -80,18 +81,20 @@ export function LuxuryNav() {
 
         <motion.nav
           className="ml-auto hidden items-center justify-end gap-8 text-[0.78rem] font-medium uppercase tracking-[0.23em] text-white/86 xl:flex"
-          variants={navStagger}
+          variants={reduceMotion ? { hidden: {}, visible: {} } : navStagger}
           initial={reduceMotion ? false : "hidden"}
-          animate={reduceMotion ? undefined : "visible"}
+          animate="visible"
           aria-label="Primary navigation"
         >
           {navItems.map((item) => (
             <motion.div
               key={item.label}
-              variants={navItem}
+              variants={reduceMotion ? { hidden: { opacity: 1, y: 0 }, visible: { opacity: 1, y: 0, transition: { duration: 0 } } } : navItem}
               whileHover={reduceMotion ? undefined : { y: -2 }}
             >
-              {item.isCta ? (
+              {item.isDiscover ? (
+                <DiscoverMenu key={pathname} />
+              ) : item.isCta ? (
                 <Link
                   href={item.href}
                   className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-md bg-[linear-gradient(135deg,#efbd75,#c7802e)] px-5 text-[0.72rem] font-semibold uppercase tracking-[0.16em] !text-[#050403] shadow-[0_0_24px_rgba(214,162,95,0.24)] transition duration-200 hover:-translate-y-0.5 ${
@@ -134,7 +137,7 @@ export function LuxuryNav() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="absolute right-6 top-[76px] w-[min(calc(100vw-3rem),24rem)] rounded-lg border border-[#d6a25f]/45 bg-[#060403] p-4 shadow-[0_22px_70px_rgba(0,0,0,0.62)] sm:right-10 lg:right-12 xl:hidden"
+            className="absolute right-6 top-[76px] max-h-[calc(100dvh-96px)] w-[min(calc(100vw-3rem),24rem)] overflow-y-auto rounded-lg border border-[#d6a25f]/45 bg-[#060403] p-4 shadow-[0_22px_70px_rgba(0,0,0,0.62)] sm:right-10 lg:right-12 xl:hidden"
             initial={reduceMotion ? false : { opacity: 0, y: -10, scale: 0.98 }}
             animate={reduceMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
             exit={reduceMotion ? undefined : { opacity: 0, y: -10, scale: 0.98 }}
@@ -144,10 +147,13 @@ export function LuxuryNav() {
               className="grid gap-1 text-[0.82rem] font-medium uppercase tracking-[0.24em] text-white/88"
               aria-label="Mobile navigation"
             >
-              {navItems.map((item) => (
+              {navItems.map((item) => item.isDiscover ? (
+                <DiscoverMenu key={`${pathname}-discover`} mobile onNavigate={() => setIsMenuOpen(false)} />
+              ) : (
                 <Link
                   key={item.label}
                   href={item.href}
+                  data-site-scope={`site-nav-mobile-${item.href.slice(1)}`}
                   className={
                     item.isCta
                       ? "mt-3 inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-[linear-gradient(135deg,#efbd75,#c7802e)] px-4 !text-[#050403] shadow-[0_0_24px_rgba(214,162,95,0.24)] transition duration-200 hover:-translate-y-0.5"

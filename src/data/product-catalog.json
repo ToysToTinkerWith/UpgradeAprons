@@ -1,7 +1,1105 @@
 [
   {
+    "slug": "ivory-cinder-standard",
+    "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": false,
+    "title": "Ivory Cinder Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Ivory leather with a dimpled black chest pocket and burnt-orange waist pockets.",
+    "description": "A slim stitched channel divides the dimpled chest pocket. A slate-blue slip pocket peeks above the right side of the orange waist panel, and dark stitching outlines the ivory hem.",
+    "image": "/images/products/ivory-cinder-standard-v1.webp",
+    "accent": "#bd6238",
+    "material": "Repurposed genuine leather",
+    "finish": "Dimpled black chest pocket and divided burnt-orange waist pocket",
+    "priceNote": "$175 plus tax",
+    "details": [
+      "Ivory body and neck loop",
+      "Divided, dimpled black chest pocket",
+      "Divided burnt-orange waist pocket",
+      "Slate-blue slip pocket",
+      "Black waist ties through metal grommets"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "5"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "canary-cobalt-standard",
+    "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": false,
+    "title": "Canary Cobalt Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Canary-yellow leather pairs with cobalt waist pockets and a brown scale-patterned chest pocket.",
+    "description": "A narrow stitched channel runs down one side of the chest pocket. At the waist, a small berry-colored pocket sits behind the right cobalt compartment.",
+    "image": "/images/products/canary-cobalt-standard-v1.webp",
+    "accent": "#edc636",
+    "material": "Repurposed genuine leather",
+    "finish": "Scale-patterned brown chest pocket and divided cobalt waist pocket",
+    "priceNote": "$175 plus tax",
+    "details": [
+      "Canary-yellow body and neck loop",
+      "Scale-patterned brown chest pocket",
+      "Divided cobalt waist pocket",
+      "Berry slip pocket",
+      "Black waist ties through metal grommets"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "5"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "honey-coral-standard",
+    "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": false,
+    "title": "Honey Coral Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Honey-colored leather frames a perforated coral chest pocket and a cream waist panel.",
+    "description": "The chest pocket has a slim compartment at one end. A burgundy slip pocket rises above the cream panel, which is stitched into two broad compartments.",
+    "image": "/images/products/honey-coral-standard-v1.webp",
+    "accent": "#d99a60",
+    "material": "Repurposed genuine leather",
+    "finish": "Perforated coral chest pocket and divided cream waist pocket",
+    "priceNote": "$175 plus tax",
+    "details": [
+      "Honey leather body",
+      "Perforated coral chest pocket",
+      "Divided cream waist pocket",
+      "Burgundy slip pocket",
+      "Black waist ties through metal grommets"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "5"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "royal-gold-crest-standard",
+    "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": false,
+    "title": "Royal Gold Crest Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Royal-blue leather with a gold-and-brown ornamental chest pocket and bright yellow waist pockets.",
+    "description": "The symmetrical scroll motif sits at the center of the bib. A glossy burgundy slip pocket tucks behind the yellow lower panel, and red stitching follows the blue hem.",
+    "image": "/images/products/royal-gold-crest-standard-v1.webp",
+    "accent": "#315596",
+    "material": "Repurposed genuine leather",
+    "finish": "Gold-and-brown ornamental chest pocket and divided yellow waist pocket",
+    "priceNote": "$175 plus tax",
+    "details": [
+      "Royal-blue body and neck loop",
+      "Gold-and-brown ornamental chest pocket",
+      "Divided yellow waist pocket",
+      "Burgundy slip pocket",
+      "Black waist ties through metal grommets"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "4"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "garnet-paisley-standard",
+    "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": false,
+    "title": "Garnet Paisley Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Garnet leather with a gold paisley chest pocket and cobalt-blue lower pockets.",
+    "description": "The paisley pattern extends across the rectangular chest pocket. A champagne-colored slip pocket sits behind the divided blue panel, with dark ties at either side.",
+    "image": "/images/products/garnet-paisley-standard-v1.webp",
+    "accent": "#944356",
+    "material": "Repurposed genuine leather",
+    "finish": "Gold paisley chest pocket and divided cobalt waist pocket",
+    "priceNote": "$175 plus tax",
+    "details": [
+      "Garnet leather body",
+      "Gold paisley chest pocket",
+      "Divided cobalt waist pocket",
+      "Champagne slip pocket",
+      "Black waist ties through metal grommets"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "4"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "saddle-forest-standard",
+    "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": false,
+    "title": "Saddle Forest Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Saddle-tan leather with a forest-green textured chest pocket and burgundy lower pockets.",
+    "description": "A line of stitching forms a narrow compartment at the right end of the green pocket. A yellow slip pocket adds a bright accent above the burgundy waist panel.",
+    "image": "/images/products/saddle-forest-standard-v1.webp",
+    "accent": "#ae7953",
+    "material": "Repurposed genuine leather",
+    "finish": "Textured forest-green chest pocket and divided burgundy waist pocket",
+    "priceNote": "$175 plus tax",
+    "details": [
+      "Saddle-tan leather body",
+      "Textured forest-green chest pocket",
+      "Divided burgundy waist pocket",
+      "Yellow slip pocket",
+      "Black waist ties through metal grommets"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "5"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "steel-blue-brick-standard",
+    "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": false,
+    "title": "Steel Blue Brick Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Steel-blue leather with a brick-red perforated chest pocket and a lavender-gray waist panel.",
+    "description": "Red stitching traces the edges of the apron and divides the lower panel. A small cognac patch pocket is sewn onto the front of the right compartment.",
+    "image": "/images/products/steel-blue-brick-standard-v1.webp",
+    "accent": "#7890b1",
+    "material": "Repurposed genuine leather",
+    "finish": "Perforated brick-red chest pocket and divided lavender-gray waist pocket",
+    "priceNote": "$175 plus tax",
+    "details": [
+      "Steel-blue body and neck loop",
+      "Perforated brick-red chest pocket",
+      "Divided lavender-gray waist pocket",
+      "Cognac patch pocket on the front panel",
+      "Black waist ties through metal grommets"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "5"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "aubergine-champagne-standard",
+    "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": false,
+    "title": "Aubergine Champagne Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Deep aubergine leather with a metallic champagne chest pocket and a taupe waist panel.",
+    "description": "A stitched divider creates a slim compartment at the left of the chest pocket. The divided taupe panel has a matching metallic slip pocket tucked behind its right side.",
+    "image": "/images/products/aubergine-champagne-standard-v1.webp",
+    "accent": "#887581",
+    "material": "Repurposed genuine leather",
+    "finish": "Metallic champagne chest pocket and divided taupe waist pocket",
+    "priceNote": "$175 plus tax",
+    "details": [
+      "Aubergine leather body",
+      "Metallic champagne chest pocket",
+      "Divided taupe waist pocket",
+      "Champagne slip pocket",
+      "Black waist ties through metal grommets"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "5"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "deep-teal-clay-standard",
+    "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": false,
+    "title": "Deep Teal Clay Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Deep teal leather with a clay-colored chest pocket and bright ivory waist pockets.",
+    "description": "A small tan slip pocket sits behind the right ivory compartment. The matching teal neck loop fastens to the bib with silver-tone snaps.",
+    "image": "/images/products/deep-teal-clay-standard-v1.webp",
+    "accent": "#486766",
+    "material": "Repurposed genuine leather",
+    "finish": "Clay-colored chest pocket and divided ivory waist pocket",
+    "priceNote": "$175 plus tax",
+    "details": [
+      "Deep teal body and neck loop",
+      "Clay-colored chest pocket",
+      "Divided ivory waist pocket",
+      "Tan slip pocket",
+      "Black waist ties through metal grommets"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "4"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "honey-scroll-crossback",
+    "categorySlug": "crossback",
+    "title": "Honey Scroll Crossback",
+    "category": "Crossback",
+    "eyebrow": "Crossback apron",
+    "intro": "Warm honey leather with a dark scroll-patterned chest pocket and a divided slate-green pocket at the waist.",
+    "description": "Warm honey leather with a dark scroll-patterned chest pocket and a divided slate-green pocket at the waist. An amber slip pocket peeks above the slate-green lower panel. Black webbing crosses behind the bib, clips to the shoulder fittings and passes through silver-tone waist grommets.",
+    "image": "/images/products/honey-scroll-crossback-v1.webp",
+    "accent": "#cda26c",
+    "material": "Repurposed genuine leather",
+    "finish": "honey leather body with brown scroll-patterned chest pocket",
+    "priceNote": "$225 plus tax",
+    "details": [
+      "Honey leather body",
+      "Brown scroll-patterned chest pocket",
+      "Divided slate-green waist pocket",
+      "Amber slip pocket",
+      "Black crossback straps"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Crossback"
+      },
+      {
+        "label": "Pockets",
+        "value": "4"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Crossback",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 225,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "chestnut-floral-crossback",
+    "categorySlug": "crossback",
+    "title": "Chestnut Floral Crossback",
+    "category": "Crossback",
+    "eyebrow": "Crossback apron",
+    "intro": "Chestnut leather with a golden floral chest pocket and a wide ivory pocket at the waist.",
+    "description": "Chestnut leather with a golden floral chest pocket and a wide ivory pocket at the waist. Warm stitching follows the grain of the chestnut leather. A smaller olive-gray pocket sits behind the two ivory compartments, and dark brown straps clip to the bib and thread through the waist grommets.",
+    "image": "/images/products/chestnut-floral-crossback-v1.webp",
+    "accent": "#a57866",
+    "material": "Repurposed genuine leather",
+    "finish": "chestnut leather body with golden floral chest pocket",
+    "priceNote": "$225 plus tax",
+    "details": [
+      "Chestnut leather body",
+      "Golden floral chest pocket",
+      "Divided ivory waist pocket",
+      "Olive-gray slip pocket",
+      "Dark brown crossback straps"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Crossback"
+      },
+      {
+        "label": "Pockets",
+        "value": "4"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Crossback",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 225,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "midnight-amber-crossback",
+    "categorySlug": "crossback",
+    "title": "Midnight Amber Crossback",
+    "category": "Crossback",
+    "eyebrow": "Crossback apron",
+    "intro": "Midnight-blue leather with a wide amber-patterned chest pocket and pale gray lower pockets.",
+    "description": "Midnight-blue leather with a wide amber-patterned chest pocket and pale gray lower pockets. A red slip pocket rises above the right side of the marbled gray waist panel. A center seam divides the panel into two compartments. Black straps cross above the bib and run through silver-tone waist grommets.",
+    "image": "/images/products/midnight-amber-crossback-v1.webp",
+    "accent": "#bc8743",
+    "material": "Repurposed genuine leather",
+    "finish": "midnight-blue leather body with wide amber-patterned chest pocket",
+    "priceNote": "$225 plus tax",
+    "details": [
+      "Midnight-blue leather body",
+      "Wide amber-patterned chest pocket",
+      "Divided marbled gray waist pocket",
+      "Red slip pocket",
+      "Black crossback straps"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Crossback"
+      },
+      {
+        "label": "Pockets",
+        "value": "4"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Crossback",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 225,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "cornflower-cognac-crossback",
+    "categorySlug": "crossback",
+    "title": "Cornflower Cognac Crossback",
+    "category": "Crossback",
+    "eyebrow": "Crossback apron",
+    "intro": "Cornflower-blue leather with an offset cognac chest pocket and a deep plum pocket at the waist.",
+    "description": "Cornflower-blue leather with an offset cognac chest pocket and a deep plum pocket at the waist. An embossed amber slip pocket sits below the chest pocket, just behind the divided plum panel. Pale stitching outlines the blue bib, where black crossover straps attach with metal clips.",
+    "image": "/images/products/cornflower-cognac-crossback-v1.webp",
+    "accent": "#7394bb",
+    "material": "Repurposed genuine leather",
+    "finish": "cornflower-blue leather body with offset cognac chest pocket",
+    "priceNote": "$225 plus tax",
+    "details": [
+      "Cornflower-blue leather body",
+      "Offset cognac chest pocket",
+      "Divided plum waist pocket",
+      "Embossed amber slip pocket",
+      "Black crossback straps"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Crossback"
+      },
+      {
+        "label": "Pockets",
+        "value": "4"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Crossback",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 225,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "chocolate-ivory-standard",
+    "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": true,
+    "title": "Chocolate Ivory Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Deep chocolate leather with an ivory chest pocket and a matching divided lower pocket.",
+    "description": "Deep chocolate leather pairs with an ivory chest pocket and a broad ivory lower pocket divided into two compartments. Pale contrast stitching traces the three-pocket layout and apron edges. A dark leather neck loop with silver-tone fasteners and black waist ties through gold-tone grommets complete the design.",
+    "image": "/images/products/chocolate-ivory-standard-v1.webp",
+    "accent": "#b9a58f",
+    "material": "Repurposed genuine leather",
+    "finish": "Deep chocolate leather with ivory pockets and pale contrast stitching",
+    "priceNote": "$175 plus tax",
+    "details": ["Deep chocolate leather body", "Ivory chest pocket", "Divided ivory lower pocket", "Dark leather neck loop", "Black waist ties and gold-tone waist grommets"],
+    "specs": [{"label": "Type", "value": "Standard"}, {"label": "Pockets", "value": "3"}, {"label": "Build", "value": "Full apron"}],
+    "layoutTags": ["Standard", "Divided pockets", "Contrast pockets"],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "seafoam-lavender-standard",
+    "categorySlug": "standard",
+    "standardSize": "small",
+    "standardSizeEstimated": true,
+    "title": "Seafoam Lavender Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Seafoam leather with a peach chest pocket and lavender lower pockets.",
+    "description": "A seafoam leather body brings together a peach chest pocket and a wide lavender lower pocket divided into two compartments. Warm contrast stitching outlines the three-pocket arrangement. The matching seafoam leather neck loop has silver-tone fasteners, while black waist ties pass through gold-tone grommets.",
+    "image": "/images/products/seafoam-lavender-standard-v1.webp",
+    "accent": "#77b5ac",
+    "material": "Repurposed genuine leather",
+    "finish": "Seafoam leather with peach and lavender pockets",
+    "priceNote": "$175 plus tax",
+    "details": ["Seafoam leather body", "Peach chest pocket", "Divided lavender lower pocket", "Matching leather neck loop", "Warm stitching and gold-tone waist grommets"],
+    "specs": [{"label": "Type", "value": "Standard"}, {"label": "Pockets", "value": "3"}, {"label": "Build", "value": "Full apron"}],
+    "layoutTags": ["Standard", "Divided pockets", "Contrast pockets"],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "ivory-rust-charcoal-standard",
+    "categorySlug": "standard",
+    "standardSize": "small",
+    "standardSizeEstimated": true,
+    "title": "Ivory Rust Charcoal Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Ivory leather with a rust chest pocket, charcoal lower pockets, and a pale utility accent.",
+    "description": "Textured ivory leather frames a rust-colored chest pocket and a broad charcoal lower pocket divided into two compartments. A small pale utility pocket sits behind the lower panel, completing the four-pocket layout. Warm contrast stitching, a dark leather neck loop with silver-tone fasteners, and black waist ties finish the apron.",
+    "image": "/images/products/ivory-rust-charcoal-standard-v1.webp",
+    "accent": "#bd7656",
+    "material": "Repurposed genuine leather",
+    "finish": "Ivory leather with rust, charcoal, and pale utility pockets",
+    "priceNote": "$175 plus tax",
+    "details": ["Textured ivory leather body", "Rust-colored chest pocket", "Divided charcoal lower pocket", "Pale utility pocket", "Dark leather neck loop and black waist ties"],
+    "specs": [{"label": "Type", "value": "Standard"}, {"label": "Pockets", "value": "4"}, {"label": "Build", "value": "Full apron"}],
+    "layoutTags": ["Standard", "Divided pockets", "Contrast pockets"],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "sage-ivory-burgundy-standard",
+    "categorySlug": "standard",
+    "standardSize": "small",
+    "standardSizeEstimated": true,
+    "title": "Sage Ivory Burgundy Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Sage-gray leather with ivory lower pockets, a burgundy chest pocket, and a deep green accent.",
+    "description": "A sage-gray leather body brings together an ivory lower pocket divided into two compartments, a burgundy chest pocket, and a small deep green utility pocket. The blue-gray leather neck loop is secured with silver-tone fasteners. Black waist ties and silver-tone grommets finish the four-pocket design.",
+    "image": "/images/products/sage-ivory-burgundy-standard-v1.webp",
+    "accent": "#8c9b90",
+    "material": "Repurposed genuine leather",
+    "finish": "Sage-gray leather with ivory lower pockets, a burgundy chest pocket, and a deep green accent",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": [
+      "Sage-gray leather body",
+      "Burgundy chest pocket",
+      "Divided ivory lower pocket",
+      "Deep green utility pocket",
+      "Blue-gray neck loop and silver-tone fittings"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "4"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "mist-ivory-standard",
+    "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": true,
+    "title": "Mist Ivory Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Soft mist-colored leather with ivory pockets and a burgundy utility accent.",
+    "description": "Pale mist-colored leather pairs with a textured ivory chest pocket and a matching divided lower pocket. A small burgundy utility pocket sits behind the lower panel, creating four compartments. The matching pale leather neck loop has silver-tone fasteners, with black waist ties through silver-tone grommets.",
+    "image": "/images/products/mist-ivory-standard-v1.webp",
+    "accent": "#b7b0bd",
+    "material": "Repurposed genuine leather",
+    "finish": "Soft mist-colored leather with ivory pockets and a burgundy utility accent",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": [
+      "Pale mist-colored leather body",
+      "Ivory chest pocket",
+      "Divided ivory lower pocket",
+      "Burgundy utility pocket",
+      "Matching neck loop and black waist ties"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "4"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "pearl-burgundy-gold-standard",
+    "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": true,
+    "title": "Pearl Burgundy Gold Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Pearly leather with rich burgundy pockets and a golden-yellow utility pocket.",
+    "description": "Rich burgundy leather forms the chest pocket and broad divided lower pocket against a pale pearly body. A small golden-yellow pocket peeks above the lower panel, completing the four-pocket layout. A matching pale leather neck loop, silver-tone hardware, and black waist ties keep the finish understated.",
+    "image": "/images/products/pearl-burgundy-gold-standard-v1.webp",
+    "accent": "#85434e",
+    "material": "Repurposed genuine leather",
+    "finish": "Pearly leather with rich burgundy pockets and a golden-yellow utility pocket",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": [
+      "Pale pearly leather body",
+      "Burgundy chest pocket",
+      "Divided burgundy lower pocket",
+      "Golden-yellow utility pocket",
+      "Pale neck loop and silver-tone hardware"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "4"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "periwinkle-bronze-standard",
+    "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": true,
+    "title": "Periwinkle Bronze Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Periwinkle-blue leather with bronze-brown pockets and a navy accent.",
+    "description": "A softly lustrous periwinkle-blue body sets off a bronze-brown chest pocket and matching divided lower pocket. A small navy utility pocket provides the fourth compartment. Pale contrast stitching outlines the panels, while the matching leather neck loop and black waist ties attach with silver-tone neck fasteners and gold-tone waist grommets.",
+    "image": "/images/products/periwinkle-bronze-standard-v1.webp",
+    "accent": "#899fc9",
+    "material": "Repurposed genuine leather",
+    "finish": "Periwinkle-blue leather with bronze-brown pockets and a navy accent",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": [
+      "Periwinkle-blue leather body",
+      "Bronze-brown chest and divided lower pockets",
+      "Navy utility pocket",
+      "Matching leather neck loop",
+      "Pale stitching and gold-tone waist grommets"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "4"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "ivory-indigo-charcoal-standard",
+    "categorySlug": "standard",
+    "standardSize": "small",
+    "standardSizeEstimated": true,
+    "title": "Ivory Indigo Charcoal Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Ivory leather with an indigo chest pocket and a charcoal divided lower pocket.",
+    "description": "Textured ivory leather provides a light backdrop for an indigo chest pocket and a wide charcoal lower pocket divided into two compartments. Warm contrast stitching outlines the three-pocket layout. A dark blue-gray leather neck loop and black waist ties complete the apron, with gold-tone waist grommets.",
+    "image": "/images/products/ivory-indigo-charcoal-standard-v1.webp",
+    "accent": "#697993",
+    "material": "Repurposed genuine leather",
+    "finish": "Ivory leather with an indigo chest pocket and a charcoal divided lower pocket",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": [
+      "Textured ivory leather body",
+      "Indigo chest pocket",
+      "Divided charcoal lower pocket",
+      "Warm contrast stitching",
+      "Dark neck loop and gold-tone waist grommets"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "3"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "ivory-crimson-charcoal-standard",
+    "categorySlug": "standard",
+    "standardSize": "small",
+    "standardSizeEstimated": true,
+    "title": "Ivory Crimson Charcoal Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Ivory leather with a charcoal chest pocket and bold crimson lower pockets.",
+    "description": "A charcoal chest pocket sits above a wide crimson lower pocket divided into two compartments on this ivory leather apron. Warm reddish stitching ties the three-pocket arrangement together. A dark leather neck loop and narrow dark waist ties connect through gold-tone fittings.",
+    "image": "/images/products/ivory-crimson-charcoal-standard-v1.webp",
+    "accent": "#c8424d",
+    "material": "Repurposed genuine leather",
+    "finish": "Ivory leather with a charcoal chest pocket and bold crimson lower pockets",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": [
+      "Ivory leather body",
+      "Charcoal chest pocket",
+      "Divided crimson lower pocket",
+      "Dark leather neck loop and narrow waist ties",
+      "Warm stitching and gold-tone fittings"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "3"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "pearl-linen-standard",
+    "categorySlug": "standard",
+    "standardSize": "small",
+    "standardSizeEstimated": true,
+    "title": "Pearl Linen Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "A tonal combination of pearly leather and soft linen-colored pockets.",
+    "description": "Pearly leather with visible natural texture forms the body of this softly toned standard apron. A linen-colored chest pocket and matching divided lower pocket create three compartments. Warm contrast stitching adds definition, with a pale leather neck loop, black waist ties, and gold-tone fittings.",
+    "image": "/images/products/pearl-linen-standard-v1.webp",
+    "accent": "#c2bcb0",
+    "material": "Repurposed genuine leather",
+    "finish": "A tonal combination of pearly leather and soft linen-colored pockets",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": [
+      "Pearly textured leather body",
+      "Linen-colored chest pocket",
+      "Matching divided lower pocket",
+      "Pale leather neck loop",
+      "Black waist ties and gold-tone fittings"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "3"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Tonal pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "tangerine-blue-standard",
+    "categorySlug": "standard",
+    "standardSize": "small",
+    "standardSizeEstimated": true,
+    "title": "Tangerine Blue Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Bright tangerine leather with cool blue pockets and pale contrast stitching.",
+    "description": "A tangerine leather body pairs with a blue chest pocket, a smaller blue utility pocket, and a broad lighter-blue divided lower pocket. The four-pocket layout is finished with pale contrast stitching. A matching orange leather neck loop has silver-tone fasteners, while black waist ties pass through gold-tone grommets.",
+    "image": "/images/products/tangerine-blue-standard-v1.webp",
+    "accent": "#dc8651",
+    "material": "Repurposed genuine leather",
+    "finish": "Bright tangerine leather with cool blue pockets and pale contrast stitching",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": [
+      "Tangerine leather body",
+      "Blue chest and utility pockets",
+      "Lighter-blue divided lower pocket",
+      "Matching orange leather neck loop",
+      "Pale stitching and gold-tone waist grommets"
+    ],
+    "specs": [
+      {
+        "label": "Type",
+        "value": "Standard"
+      },
+      {
+        "label": "Pockets",
+        "value": "4"
+      },
+      {
+        "label": "Build",
+        "value": "Full apron"
+      }
+    ],
+    "layoutTags": [
+      "Standard",
+      "Divided pockets",
+      "Contrast pockets"
+    ],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "charcoal-sage-standard",
+    "categorySlug": "standard",
+    "standardSize": "small",
+    "standardSizeEstimated": true,
+    "title": "Charcoal Sage Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Charcoal-brown leather with a teal chest pocket, pale sage lower pockets, and a small red accent.",
+    "description": "A charcoal-brown full apron with a dark leather neck loop and a soft mix of contrasting pocket colors. The teal chest pocket sits above a broad sage lower pocket divided into two compartments, with a small red utility pocket tucked behind it. Reddish stitching follows the edges, while black waist ties pass through gold-tone grommets.",
+    "image": "/images/products/charcoal-sage-standard-v1.webp",
+    "accent": "#8fa79d",
+    "material": "Repurposed genuine top-grain leather",
+    "finish": "Reddish contrast stitching, silver-tone neck fasteners, and gold-tone grommets",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Charcoal-brown leather body and dark leather neck loop", "Teal chest pocket", "Wide pale sage lower pocket with two compartments", "Small red utility pocket behind the lower pocket", "Silver-tone neck fasteners", "Black waist ties through gold-tone grommets"],
+    "specs": [{"label": "Type", "value": "Standard"}, {"label": "Pockets", "value": "4"}, {"label": "Build", "value": "Full apron"}],
+    "layoutTags": ["Standard", "Divided pockets", "Contrast pockets"],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "forest-sunflower-standard",
+    "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": true,
+    "title": "Forest Sunflower Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Deep forest-green leather with sunflower-yellow pockets and a pale blue-gray neck strap.",
+    "description": "Sunflower-yellow pockets bring a bright contrast to this deep forest-green leather apron. A chest pocket, small utility pocket, and wide divided lower pocket make four compartments for everyday essentials. The pale blue-gray leather neck strap is secured with silver-tone fasteners, with matching silver-tone grommets for the black waist ties.",
+    "image": "/images/products/forest-sunflower-standard-v1.webp",
+    "accent": "#d9b849",
+    "material": "Repurposed genuine top-grain leather",
+    "finish": "Tonal stitching and silver-tone hardware",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Deep forest-green leather body", "Pale blue-gray leather neck strap", "Sunflower-yellow chest pocket", "Wide yellow lower pocket with two compartments", "Small yellow utility pocket above the lower pocket", "Black waist ties and silver-tone hardware"],
+    "specs": [{"label": "Type", "value": "Standard"}, {"label": "Pockets", "value": "4"}, {"label": "Build", "value": "Full apron"}],
+    "layoutTags": ["Standard", "Divided pockets", "Contrast pockets"],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "indigo-ivory-standard",
+    "categorySlug": "standard",
+    "standardSize": "small",
+    "standardSizeEstimated": true,
+    "title": "Indigo Ivory Standard",
+    "category": "Standard",
+    "eyebrow": "Full apron",
+    "intro": "Indigo-blue leather with ivory lower pockets, a rust-red chest pocket, and a navy utility pocket.",
+    "description": "An indigo-blue full apron with a matching leather neck loop and a distinctive three-color pocket layout. A rust-red chest pocket adds warmth above the broad ivory lower pocket, which is divided into two compartments. A smaller navy utility pocket sits just behind it. Reddish stitching, silver-tone hardware, and black waist ties complete the design.",
+    "image": "/images/products/indigo-ivory-standard-v1.webp",
+    "accent": "#7a91b0",
+    "material": "Repurposed genuine top-grain leather",
+    "finish": "Reddish contrast stitching and silver-tone hardware",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Indigo-blue leather body and matching neck loop", "Rust-red chest pocket", "Broad ivory lower pocket with two compartments", "Small navy utility pocket behind the lower pocket", "Silver-tone neck fasteners and waist grommets", "Black waist ties and reddish contrast stitching"],
+    "specs": [{"label": "Type", "value": "Standard"}, {"label": "Pockets", "value": "4"}, {"label": "Build", "value": "Full apron"}],
+    "layoutTags": ["Standard", "Divided pockets", "Contrast pockets"],
+    "basePrice": 175,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
     "slug": "cobalt-crimson-standard",
     "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": true,
     "title": "Cobalt Crimson Standard",
     "category": "Standard",
     "eyebrow": "Full apron",
@@ -23,6 +1121,8 @@
   {
     "slug": "burgundy-bloom-standard",
     "categorySlug": "standard",
+    "standardSize": "large",
+    "standardSizeEstimated": true,
     "title": "Burgundy Bloom Standard",
     "category": "Standard",
     "eyebrow": "Full apron",
@@ -272,6 +1372,280 @@
     "specs": [{"label": "Type", "value": "Half-Apron"}, {"label": "Pockets", "value": "4 compartments"}, {"label": "Build", "value": "Waist apron"}],
     "layoutTags": ["Half-Aprons", "Divided pockets", "Contrast pockets"],
     "basePrice": 125,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "ivory-indigo-clay-half-apron",
+    "categorySlug": "half-apron",
+    "title": "Ivory Indigo Clay Half Apron",
+    "category": "Half-Aprons",
+    "eyebrow": "Half apron",
+    "intro": "Ivory leather with a divided indigo pocket, a clay-colored accent, and a pale blue utility pocket.",
+    "description": "An ivory half apron with a broad indigo front pocket divided into two compartments. A small clay-colored pocket sits on the right-hand panel, while a pale blue utility pocket rises behind the top edge. Reddish contrast stitching brings the four-pocket layout together, with black waist ties threaded through silver-tone grommets.",
+    "image": "/images/products/ivory-indigo-clay-half-apron-v1.webp",
+    "accent": "#63748e",
+    "material": "Repurposed genuine top-grain leather",
+    "finish": "Layered contrast pockets and silver-tone grommets",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Ivory leather body", "Broad divided indigo front pocket", "Clay-colored overlay pocket", "Pale blue utility pocket behind the front panel", "Black waist ties and silver-tone grommets"],
+    "specs": [{"label": "Type", "value": "Half-Apron"}, {"label": "Pockets", "value": "4"}, {"label": "Build", "value": "Waist apron"}],
+    "layoutTags": ["Half-Aprons", "Layered pockets", "Divided pockets"],
+    "basePrice": 125,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "ivory-turquoise-clay-half-apron",
+    "categorySlug": "half-apron",
+    "title": "Ivory Turquoise Clay Half Apron",
+    "category": "Half-Aprons",
+    "eyebrow": "Half apron",
+    "intro": "Ivory leather with generous turquoise pockets and warm clay-colored accents.",
+    "description": "A broad turquoise pocket brings a bright contrast to the ivory leather body. The front panel is divided into two compartments, with a clay-colored side pocket and a smaller matching utility pocket tucked behind its upper edge. Dark stitching outlines the four-pocket layout, finished with black waist ties and silver-tone grommets.",
+    "image": "/images/products/ivory-turquoise-clay-half-apron-v1.webp",
+    "accent": "#388ca5",
+    "material": "Repurposed genuine top-grain leather",
+    "finish": "Turquoise and clay pockets with dark stitching",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Ivory leather body", "Broad divided turquoise front pocket", "Clay-colored side pocket", "Small clay-colored utility pocket", "Black waist ties and silver-tone grommets"],
+    "specs": [{"label": "Type", "value": "Half-Apron"}, {"label": "Pockets", "value": "4"}, {"label": "Build", "value": "Waist apron"}],
+    "layoutTags": ["Half-Aprons", "Divided pockets", "Contrast pockets"],
+    "basePrice": 125,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "ivory-trio-half-apron",
+    "categorySlug": "half-apron",
+    "title": "Ivory Trio Half Apron",
+    "category": "Half-Aprons",
+    "eyebrow": "Half apron",
+    "intro": "Three distinct pocket colors on ivory leather, finished with a black webbing waist belt.",
+    "description": "An uncluttered three-pocket half apron pairing an ivory leather body with burgundy, navy, and tan. Two taller side pockets frame a smaller horizontal center pocket, giving each color and texture its own space. Dark stitching outlines the panels, and black webbing runs along the waist.",
+    "image": "/images/products/ivory-trio-half-apron-v2.webp",
+    "accent": "#92704e",
+    "material": "Repurposed genuine top-grain leather",
+    "finish": "Three contrasting pockets and a webbing waist belt",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Ivory leather body", "Burgundy left pocket", "Small horizontal navy center pocket", "Tan right pocket", "Black webbing waist belt and dark stitching"],
+    "specs": [{"label": "Type", "value": "Half-Apron"}, {"label": "Pockets", "value": "3"}, {"label": "Build", "value": "Waist apron"}],
+    "layoutTags": ["Half-Aprons", "Contrast pockets", "Webbing belt"],
+    "basePrice": 125,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "mist-periwinkle-sunshine-half-apron",
+    "categorySlug": "half-apron",
+    "title": "Mist Periwinkle Sunshine Half Apron",
+    "category": "Half-Aprons",
+    "eyebrow": "Half apron",
+    "intro": "Soft mist-gray leather with periwinkle pockets and sunny yellow and orange accents.",
+    "description": "A light mist-gray body sets off the broad periwinkle front pocket, divided into two roomy compartments. A pale yellow side pocket and a small orange utility pocket add warm accents to the four-pocket design. Reddish stitching traces the leather panels, while black waist ties attach through silver-tone grommets.",
+    "image": "/images/products/mist-periwinkle-sunshine-half-apron-v1.webp",
+    "accent": "#8a9cbc",
+    "material": "Repurposed genuine top-grain leather",
+    "finish": "Periwinkle pockets with yellow and orange accents",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Light mist-gray leather body", "Divided periwinkle front pocket", "Pale yellow side pocket", "Small orange utility pocket", "Black waist ties and silver-tone grommets"],
+    "specs": [{"label": "Type", "value": "Half-Apron"}, {"label": "Pockets", "value": "4"}, {"label": "Build", "value": "Waist apron"}],
+    "layoutTags": ["Half-Aprons", "Divided pockets", "Contrast pockets"],
+    "basePrice": 125,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "ivory-periwinkle-charcoal-half-apron",
+    "categorySlug": "half-apron",
+    "title": "Ivory Periwinkle Charcoal Half Apron",
+    "category": "Half-Aprons",
+    "eyebrow": "Half apron",
+    "intro": "Ivory leather with cool periwinkle, charcoal-gray, and pale lavender pockets.",
+    "description": "This ivory half apron combines a broad divided periwinkle pocket with a charcoal-gray side pocket. A smaller pale lavender utility pocket rises behind the front panel, completing the four-compartment layout. Pale stitching follows the pocket edges, and black waist ties thread through silver-tone grommets.",
+    "image": "/images/products/ivory-periwinkle-charcoal-half-apron-v1.webp",
+    "accent": "#8893b3",
+    "material": "Repurposed genuine top-grain leather",
+    "finish": "Cool contrast pockets and pale stitching",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Ivory leather body", "Divided periwinkle front pocket", "Charcoal-gray side pocket", "Pale lavender utility pocket", "Black waist ties and silver-tone grommets"],
+    "specs": [{"label": "Type", "value": "Half-Apron"}, {"label": "Pockets", "value": "4"}, {"label": "Build", "value": "Waist apron"}],
+    "layoutTags": ["Half-Aprons", "Divided pockets", "Contrast pockets"],
+    "basePrice": 125,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "ivory-burgundy-utility-half-apron",
+    "categorySlug": "half-apron",
+    "title": "Ivory Burgundy Utility Half Apron",
+    "category": "Half-Aprons",
+    "eyebrow": "Half apron",
+    "intro": "Four contrasting pockets on ivory leather, with an adjustable webbing belt and side-release buckle.",
+    "description": "Two charcoal-toned side pockets frame a pair of smaller burgundy pockets stacked at the center of this ivory half apron. The separated four-pocket arrangement keeps the contrasting leather colors clearly defined. Dark stitching finishes the panels, and a black adjustable webbing belt fastens with a side-release buckle.",
+    "image": "/images/products/ivory-burgundy-utility-half-apron-v1.webp",
+    "accent": "#83534e",
+    "material": "Repurposed genuine top-grain leather",
+    "finish": "Contrast pockets and an adjustable buckle belt",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Ivory leather body", "Two charcoal-toned side pockets", "Two burgundy center pockets", "Black adjustable webbing waist belt", "Side-release buckle and dark stitching"],
+    "specs": [{"label": "Type", "value": "Half-Apron"}, {"label": "Pockets", "value": "4"}, {"label": "Build", "value": "Waist apron"}],
+    "layoutTags": ["Half-Aprons", "Contrast pockets", "Webbing belt"],
+    "basePrice": 125,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "ivory-slate-crossback",
+    "categorySlug": "crossback",
+    "title": "Ivory Slate Crossback",
+    "category": "Crossback",
+    "eyebrow": "Crossback apron",
+    "intro": "Ivory leather with slate-blue pockets, a charcoal utility pocket, and light gray crossback straps.",
+    "description": "An ivory leather apron with a slate-blue chest pocket and a broad matching lower pocket divided into two compartments. A small charcoal utility pocket rises behind the lower panel, completing the four-pocket layout. Light gray webbing crosses at the back and clips to gold-tone chest fittings, with matching waist ties threaded through gold-tone grommets.",
+    "image": "/images/products/ivory-slate-crossback-v1.webp",
+    "accent": "#71839e",
+    "material": "Repurposed genuine top-grain leather",
+    "finish": "Slate-blue pockets and gold-tone fittings",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Ivory leather body", "Slate-blue chest and divided lower pockets", "Small charcoal utility pocket", "Light gray crossback webbing with clip attachments", "Gold-tone grommets and pale stitching"],
+    "specs": [{"label": "Type", "value": "Crossback"}, {"label": "Pockets", "value": "4"}, {"label": "Build", "value": "Full apron"}],
+    "layoutTags": ["Crossback", "Divided pockets", "Contrast pockets"],
+    "basePrice": 225,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "pearl-stone-crossback",
+    "categorySlug": "crossback",
+    "title": "Pearl Stone Crossback",
+    "category": "Crossback",
+    "eyebrow": "Crossback apron",
+    "intro": "A softly mottled pearl-colored apron with stone-gray pockets and light gray crossback straps.",
+    "description": "Pale pearl-colored leather and stone-gray pocket panels give this crossback apron a tonal finish. The leather's visible mottling carries across the chest pocket, divided lower pocket, and smaller utility pocket behind it. Gray webbing straps cross at the back and clip onto the chest fittings, while gold-tone grommets frame the four attachment points.",
+    "image": "/images/products/pearl-stone-crossback-v1.webp",
+    "accent": "#b2ada2",
+    "material": "Repurposed genuine top-grain leather",
+    "finish": "Mottled pearl and stone tones with gold-tone fittings",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Pale pearl-colored leather body", "Stone-gray chest pocket", "Divided lower pocket and small utility pocket", "Light gray crossback webbing with clip attachments", "Gold-tone grommets and tonal stitching"],
+    "specs": [{"label": "Type", "value": "Crossback"}, {"label": "Pockets", "value": "4"}, {"label": "Build", "value": "Full apron"}],
+    "layoutTags": ["Crossback", "Divided pockets", "Tonal pockets"],
+    "basePrice": 225,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "ivory-teal-crossback",
+    "categorySlug": "crossback",
+    "title": "Ivory Teal Crossback",
+    "category": "Crossback",
+    "eyebrow": "Crossback apron",
+    "intro": "Ivory leather with deep teal lower pockets, a pale blue chest pocket, and a burgundy accent.",
+    "description": "A deep teal front pocket, divided into two compartments, contrasts with the textured ivory leather body. A pale blue chest pocket and a small burgundy utility pocket add two more colors to the four-pocket arrangement. Reddish stitching follows the panels, and light gray crossback webbing connects with clips and gold-tone grommets.",
+    "image": "/images/products/ivory-teal-crossback-v1.webp",
+    "accent": "#497b83",
+    "material": "Repurposed genuine top-grain leather",
+    "finish": "Teal, pale blue, and burgundy contrast pockets",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Textured ivory leather body", "Pale blue chest pocket", "Deep teal divided lower pocket", "Small burgundy utility pocket", "Light gray crossback straps and gold-tone grommets"],
+    "specs": [{"label": "Type", "value": "Crossback"}, {"label": "Pockets", "value": "4"}, {"label": "Build", "value": "Full apron"}],
+    "layoutTags": ["Crossback", "Divided pockets", "Contrast pockets"],
+    "basePrice": 225,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "bronze-rose-half-apron",
+    "categorySlug": "half-apron",
+    "title": "Bronze Rose Half Apron",
+    "category": "Half-Aprons",
+    "eyebrow": "Half apron",
+    "intro": "Bronze-toned leather with tan pockets and a rose-pink embossed statement pocket.",
+    "description": "A softly metallic bronze-toned body pairs with two small tan pockets and a generous rose-pink pocket with an embossed reptile pattern. The three separate pockets offer a mix of sizes, framed by pale contrast stitching. A dark adjustable webbing belt runs across the top and fastens with a side-release buckle.",
+    "image": "/images/products/bronze-rose-half-apron-v1.webp",
+    "accent": "#a46880",
+    "material": "Repurposed genuine leather",
+    "finish": "Bronze sheen and rose-pink embossed pocket",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Bronze-toned leather body", "Two small tan pockets", "Large rose-pink embossed pocket", "Adjustable dark webbing waist belt", "Side-release buckle and pale stitching"],
+    "specs": [{"label": "Type", "value": "Half-Apron"}, {"label": "Pockets", "value": "3"}, {"label": "Build", "value": "Waist apron"}],
+    "layoutTags": ["Half-Aprons", "Contrast pockets", "Webbing belt"],
+    "basePrice": 125,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "pearl-olive-blue-half-apron",
+    "categorySlug": "half-apron",
+    "title": "Pearl Olive Blue Half Apron",
+    "category": "Half-Aprons",
+    "eyebrow": "Half apron",
+    "intro": "Pearly leather with olive-gray front pockets and two shades of blue.",
+    "description": "A pale pearly body sets off a broad olive-gray front pocket divided into two compartments. A blue side pocket and a smaller pale blue utility pocket tucked behind the front panel complete the four-pocket layout. Pale stitching outlines each panel, with dark waist ties threaded through silver-tone grommets.",
+    "image": "/images/products/pearl-olive-blue-half-apron-v1.webp",
+    "accent": "#7894ac",
+    "material": "Repurposed genuine leather",
+    "finish": "Pearly body with olive-gray and blue contrast pockets",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Pale pearly leather body", "Divided olive-gray front pocket", "Blue side pocket", "Pale blue utility pocket", "Dark waist ties and silver-tone grommets"],
+    "specs": [{"label": "Type", "value": "Half-Apron"}, {"label": "Pockets", "value": "4"}, {"label": "Build", "value": "Waist apron"}],
+    "layoutTags": ["Half-Aprons", "Divided pockets", "Contrast pockets"],
+    "basePrice": 125,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "silver-coral-half-apron",
+    "categorySlug": "half-apron",
+    "title": "Silver Coral Half Apron",
+    "category": "Half-Aprons",
+    "eyebrow": "Half apron",
+    "intro": "Silvery leather, charcoal-toned front pockets, and bright coral accents.",
+    "description": "A silvery leather body brings a subtle sheen to this half apron. The wide charcoal-toned front pocket is divided into two compartments, with a coral side pocket and a smaller matching utility pocket adding a warm contrast. Coral stitching follows the panels, and dark waist ties attach through gold-tone grommets.",
+    "image": "/images/products/silver-coral-half-apron-v1.webp",
+    "accent": "#d96952",
+    "material": "Repurposed genuine leather",
+    "finish": "Silvery sheen with coral pockets and stitching",
+    "priceNote": "Custom pricing based on leather and layout",
+    "details": ["Silvery leather body", "Divided charcoal-toned front pocket", "Coral side and utility pockets", "Coral contrast stitching", "Dark waist ties and gold-tone grommets"],
+    "specs": [{"label": "Type", "value": "Half-Apron"}, {"label": "Pockets", "value": "4"}, {"label": "Build", "value": "Waist apron"}],
+    "layoutTags": ["Half-Aprons", "Divided pockets", "Contrast pockets"],
+    "basePrice": 125,
+    "limitedEdition": false,
+    "imageUrl": "",
+    "imageStoragePath": ""
+  },
+  {
+    "slug": "graphite-utility-custom",
+    "categorySlug": "custom",
+    "title": "Graphite Utility Custom Apron",
+    "category": "Custom",
+    "eyebrow": "Completed custom commission",
+    "intro": "A bespoke graphite apron with dedicated places for a notebook, pen, glasses, and hand tools. Sold; shown for inspiration.",
+    "description": "Graphite leather and pale contrast stitching frame a purpose-built pocket layout. A notebook pocket, a narrow pen pocket, and a glasses loop keep smaller items near the chest. Two broad lower pockets carry shaped tool sleeves, with a matching leather neck strap and snap-fastened waist strap. This completed commission has sold and is not available to purchase.",
+    "image": "/images/products/graphite-utility-custom-v1.webp",
+    "accent": "#8ca9b9",
+    "material": "Repurposed genuine leather",
+    "finish": "Graphite leather with pale contrast stitching",
+    "priceNote": "Sold commission; new custom work is quoted individually",
+    "details": ["Dedicated notebook and pen pockets", "Chest loop for glasses", "Two lower pockets with shaped tool sleeves", "Matching leather neck and waist straps", "Tools and accessories pictured illustrate the custom layout"],
+    "specs": [{"label": "Type", "value": "Custom"}, {"label": "Layout", "value": "Tool-focused"}, {"label": "Status", "value": "Sold"}],
+    "layoutTags": ["Custom commission", "Tool sleeves", "Glasses loop"],
+    "sold": true,
+    "showcaseOnly": true,
     "limitedEdition": false,
     "imageUrl": "",
     "imageStoragePath": ""

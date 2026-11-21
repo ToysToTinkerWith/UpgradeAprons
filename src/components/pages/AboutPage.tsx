@@ -167,7 +167,7 @@ export function AboutPage() {
               />
             </div>
             <p className="text-base leading-7 text-[#d8cabc]">
-              Four decades of furniture upholstery knowledge, translated into
+              Four decades of furniture upholstery experience, translated into
               genuine leather aprons that are durable, functional, and
               intentionally personal.
             </p>

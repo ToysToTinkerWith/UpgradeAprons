@@ -2,12 +2,16 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CategoryPage } from "@/components/pages/CategoryPage";
 import { ProductDetailPage } from "@/components/pages/ProductDetailPage";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbData, categorySeoTitle, pageMetadata } from "@/lib/seo";
 import {
   apronCategories,
   apronProducts,
   getCategoryBySlug,
   getProductsByCategorySlug,
   findProductBySegments,
+  getProductHref,
+  getCategoryHref,
 } from "@/lib/site-data";
 
 type ProductPageProps = {
@@ -35,48 +39,27 @@ export async function generateMetadata({
   const product = id.length > 1 ? findProductBySegments(id) : undefined;
 
   if (category) {
-    const categoryTitle = category.title.endsWith("Apron")
-      ? category.title
-      : `${category.title} Aprons`;
-
-    return {
-      title: `${categoryTitle} | Upgrade Aprons`,
+    return pageMetadata({
+      title: categorySeoTitle(category.slug),
       description: category.description,
-      openGraph: {
-        title: `${categoryTitle} | Upgrade Aprons`,
-        description: category.description,
-        images: [category.image],
-      },
-      twitter: {
-        card: "summary_large_image",
-        title: `${categoryTitle} | Upgrade Aprons`,
-        description: category.description,
-        images: [category.image],
-      },
-    };
+      path: getCategoryHref(category),
+      image: category.image,
+    });
   }
 
   if (!product) {
     return {
       title: "Apron Not Found | Upgrade Aprons",
+      robots: { index: false, follow: false },
     };
   }
 
-  return {
-    title: `${product.title} | Upgrade Aprons`,
-    description: product.intro,
-    openGraph: {
-      title: `${product.title} | Upgrade Aprons`,
-      description: product.intro,
-      images: [product.image],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${product.title} | Upgrade Aprons`,
-      description: product.intro,
-      images: [product.image],
-    },
-  };
+  return pageMetadata({
+    title: product.title.replace(/Apron$/, "Leather Apron"),
+    description: `Handcrafted leather apron. ${product.intro}`,
+    path: getProductHref(product),
+    image: product.imageUrl || product.image,
+  });
 }
 
 export default async function ProductDetail({ params }: ProductPageProps) {
@@ -90,10 +73,17 @@ export default async function ProductDetail({ params }: ProductPageProps) {
     }
 
     return (
-      <CategoryPage
-        category={category}
-        products={getProductsByCategorySlug(category.slug)}
-      />
+      <>
+        <JsonLd data={breadcrumbData([
+          { name: "Home", path: "/" },
+          { name: "Handcrafted Leather Aprons", path: "/products" },
+          { name: categorySeoTitle(category.slug), path: getCategoryHref(category) },
+        ])} />
+        <CategoryPage
+          category={category}
+          products={getProductsByCategorySlug(category.slug)}
+        />
+      </>
     );
   }
 
@@ -103,5 +93,15 @@ export default async function ProductDetail({ params }: ProductPageProps) {
     notFound();
   }
 
-  return <ProductDetailPage product={product} />;
+  return (
+    <>
+      <JsonLd data={breadcrumbData([
+        { name: "Home", path: "/" },
+        { name: "Handcrafted Leather Aprons", path: "/products" },
+        { name: categorySeoTitle(product.categorySlug), path: `/products/${product.categorySlug}` },
+        { name: product.title, path: getProductHref(product) },
+      ])} />
+      <ProductDetailPage product={product} />
+    </>
+  );
 }

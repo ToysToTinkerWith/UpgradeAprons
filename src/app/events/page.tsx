@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { PressPage } from "@/components/pages/PressPage";
 
-export const metadata: Metadata = {
-  title: "Events | Upgrade Aprons",
+export const metadata = pageMetadata({
+  path: "/events",
+  title: "Handcrafted Aprons at Markets & Events",
   description:
-    "Festival notes, market photos, and event stories from Upgrade Aprons.",
-};
+    "Upcoming markets, holiday shows, festival photos, and event stories from Upgrade Aprons.",
+});
 
 export default function Events() {
   return <PressPage />;

@@ -71,8 +71,8 @@ export function CustomOrdersPage() {
               <span>Custom Orders</span>
             </p>
             <h1 className="font-display mt-7 text-6xl font-semibold leading-[0.92] text-[#f8f2e9] sm:text-7xl lg:text-8xl">
-              Design the apron around
-              <span className="block text-[#e7ad61]">the work.</span>
+              Start the apron
+              <span className="block text-[#e7ad61]">conversation.</span>
             </h1>
             <div className="my-8 h-[3px] w-16 bg-[#d6a25f]" />
             <p className="max-w-[43rem] text-lg leading-8 text-[#d8cabc] sm:text-xl">
@@ -116,7 +116,7 @@ export function CustomOrdersPage() {
                 },
                 {
                   label: "Build notes",
-                  value: "Use case, wearer height, contact details, and custom notes",
+                  value: "Use case, contact details, and custom notes",
                 },
               ].map((item) => (
                 <div
@@ -126,7 +126,10 @@ export function CustomOrdersPage() {
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#e7ad61]">
                     {item.label}
                   </p>
-                  <p className="mt-2 text-base leading-7 text-[#d8cabc]">
+                  <p
+                    className="mt-2 text-base leading-7 text-[#d8cabc]"
+                    data-site-scope={item.label === "Build notes" ? "custom-build-notes" : undefined}
+                  >
                     {item.value}
                   </p>
                 </div>

@@ -10,7 +10,9 @@ async function main() {
   const refreshImages = process.argv.includes('--refresh-images');
   const imagesOnly = process.argv.includes('--images-only');
   const addOnly = process.argv.includes('--add-only');
+  const onlySlug = process.argv.find((argument) => argument.startsWith('--slug='))?.slice(7);
   if (addOnly && (imagesOnly || refreshImages)) throw new Error('--add-only cannot be combined with image updates.');
+  if (onlySlug && !imagesOnly && !addOnly) throw new Error('--slug requires --images-only or --add-only.');
   if (!cliDirectory) throw new Error('Pass the firebase-tools package directory.');
   const auth = await import(pathToFileURL(path.join(cliDirectory, 'lib/auth.js')).href);
   const account = auth.getProjectDefaultAccount(process.cwd());
@@ -38,7 +40,9 @@ async function main() {
     documents.push(...(page.documents ?? []));
     pageToken = page.nextPageToken;
   } while (pageToken);
-  const catalog = JSON.parse(fs.readFileSync('src/data/product-catalog.json', 'utf8'));
+  const allProducts = JSON.parse(fs.readFileSync('src/data/product-catalog.json', 'utf8'));
+  const catalog = onlySlug ? allProducts.filter((product) => product.slug === onlySlug) : allProducts;
+  if (onlySlug && catalog.length !== 1) throw new Error(`Unknown or duplicate product slug: ${onlySlug}`);
   const keep = new Set(catalog.map((product) => product.slug));
   const obsolete = imagesOnly || addOnly ? [] : documents.filter((document) => !keep.has(document.name.split('/').pop()));
   console.log(JSON.stringify({

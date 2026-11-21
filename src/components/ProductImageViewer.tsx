@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { X } from "lucide-react";
+import { SoldBadge } from "@/components/SoldBadge";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 type ProductImageViewerProps = {
@@ -11,6 +12,7 @@ type ProductImageViewerProps = {
   alt: string;
   sizes: string;
   priority?: boolean;
+  sold?: boolean;
   frameClassName?: string;
   imageClassName?: string;
 };
@@ -22,6 +24,7 @@ export function ProductImageViewer({
   alt,
   sizes,
   priority = false,
+  sold = false,
   frameClassName = "",
   imageClassName = "",
 }: ProductImageViewerProps) {
@@ -76,6 +79,7 @@ export function ProductImageViewer({
           exit={reduceMotion ? undefined : { opacity: 0 }}
           transition={{ duration: 0.22 }}
         >
+          {sold ? <SoldBadge /> : null}
           <span className="pointer-events-none absolute right-5 top-5 z-10 inline-flex size-11 items-center justify-center rounded-full border border-[#d6a25f]/60 bg-black/45 text-[#e7ad61] shadow-[0_16px_38px_rgba(0,0,0,0.34)]">
             <X size={24} aria-hidden="true" />
           </span>
@@ -103,7 +107,7 @@ export function ProductImageViewer({
     <>
       <button
         type="button"
-        aria-label={`View ${alt} full screen`}
+        aria-label={`View ${alt} full screen${sold ? ", sold" : ""}`}
         className={`relative block w-full cursor-zoom-in ${frameClassName}`}
         onClick={openViewer}
       >
@@ -115,6 +119,7 @@ export function ProductImageViewer({
           sizes={sizes}
           className={imageClassName}
         />
+        {sold ? <SoldBadge /> : null}
       </button>
 
       {isOpen ? createPortal(modal, document.body) : null}

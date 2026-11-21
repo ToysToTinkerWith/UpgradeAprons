@@ -1,0 +1,674 @@
+[
+  {
+    "slug": "chocolate-ivory-standard",
+    "source": "standard-october-additions/originals/1-Photo-1.jpg",
+    "pocketCorners": [
+      [
+        610,
+        540
+      ],
+      [
+        823,
+        540
+      ],
+      [
+        824,
+        764
+      ],
+      [
+        604,
+        757
+      ]
+    ],
+    "bibCenter": [
+      722,
+      384
+    ],
+    "hemEndpoints": [
+      [
+        148,
+        1595
+      ],
+      [
+        1273,
+        1640
+      ]
+    ],
+    "photoWidthInches": 26.0,
+    "photoLengthInches": 30.76,
+    "closestTemplate": "large",
+    "needsReview": false,
+    "standardSize": "large",
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "seafoam-lavender-standard",
+    "source": "standard-october-additions/originals/2-Photo-2.jpg",
+    "pocketCorners": [
+      [
+        616,
+        594
+      ],
+      [
+        824,
+        594
+      ],
+      [
+        824,
+        810
+      ],
+      [
+        612,
+        809
+      ]
+    ],
+    "bibCenter": [
+      707,
+      425
+    ],
+    "hemEndpoints": [
+      [
+        183,
+        1530
+      ],
+      [
+        1235,
+        1550
+      ]
+    ],
+    "photoWidthInches": 25.05,
+    "photoLengthInches": 28.45,
+    "closestTemplate": "large",
+    "needsReview": false,
+    "standardSize": "large",
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "ivory-rust-charcoal-standard",
+    "source": "standard-october-additions/originals/3-Photo-3.jpg",
+    "pocketCorners": [
+      [
+        586,
+        591
+      ],
+      [
+        797,
+        591
+      ],
+      [
+        797,
+        812
+      ],
+      [
+        578,
+        810
+      ]
+    ],
+    "bibCenter": [
+      693,
+      394
+    ],
+    "hemEndpoints": [
+      [
+        146,
+        1541
+      ],
+      [
+        1201,
+        1580
+      ]
+    ],
+    "photoWidthInches": 24.55,
+    "photoLengthInches": 29.16,
+    "closestTemplate": "large",
+    "needsReview": false,
+    "standardSize": "large",
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "sage-ivory-burgundy-standard",
+    "source": "standard-october/originals/1-Photo-1.jpg",
+    "pocketCorners": [
+      [
+        603,
+        617
+      ],
+      [
+        810,
+        615
+      ],
+      [
+        820,
+        841
+      ],
+      [
+        596,
+        836
+      ]
+    ],
+    "bibCenter": [
+      697,
+      423
+    ],
+    "hemEndpoints": [
+      [
+        219,
+        1547
+      ],
+      [
+        1195,
+        1565
+      ]
+    ],
+    "photoWidthInches": 22.65,
+    "photoLengthInches": 27.99,
+    "closestTemplate": "large",
+    "needsReview": false,
+    "standardSize": "large",
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "mist-ivory-standard",
+    "source": "standard-october/originals/2-Photo-2.jpg",
+    "pocketCorners": [
+      [
+        574,
+        599
+      ],
+      [
+        780,
+        598
+      ],
+      [
+        790,
+        823
+      ],
+      [
+        568,
+        822
+      ]
+    ],
+    "bibCenter": [
+      685,
+      411
+    ],
+    "hemEndpoints": [
+      [
+        127,
+        1643
+      ],
+      [
+        1227,
+        1662
+      ]
+    ],
+    "photoWidthInches": 25.7,
+    "photoLengthInches": 30.46,
+    "closestTemplate": "large",
+    "needsReview": false,
+    "standardSize": "large",
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "pearl-burgundy-gold-standard",
+    "source": "standard-october/originals/3-Photo-3.jpg",
+    "pocketCorners": [
+      [
+        552,
+        562
+      ],
+      [
+        755,
+        557
+      ],
+      [
+        773,
+        773
+      ],
+      [
+        555,
+        778
+      ]
+    ],
+    "bibCenter": [
+      659,
+      369
+    ],
+    "hemEndpoints": [
+      [
+        137,
+        1597
+      ],
+      [
+        1225,
+        1579
+      ]
+    ],
+    "photoWidthInches": 25.84,
+    "photoLengthInches": 30.99,
+    "closestTemplate": "large",
+    "needsReview": false,
+    "standardSize": "large",
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "periwinkle-bronze-standard",
+    "source": "standard-october/originals/4-Photo-4.jpg",
+    "pocketCorners": [
+      [
+        549,
+        551
+      ],
+      [
+        760,
+        546
+      ],
+      [
+        772,
+        778
+      ],
+      [
+        550,
+        778
+      ]
+    ],
+    "bibCenter": [
+      665,
+      335
+    ],
+    "hemEndpoints": [
+      [
+        129,
+        1612
+      ],
+      [
+        1240,
+        1589
+      ]
+    ],
+    "photoWidthInches": 25.66,
+    "photoLengthInches": 30.31,
+    "closestTemplate": "large",
+    "needsReview": false,
+    "standardSize": "large",
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "ivory-indigo-charcoal-standard",
+    "source": "standard-october/originals/5-Photo-5.jpg",
+    "pocketCorners": [
+      [
+        516,
+        474
+      ],
+      [
+        734,
+        462
+      ],
+      [
+        747,
+        702
+      ],
+      [
+        508,
+        707
+      ]
+    ],
+    "bibCenter": [
+      635,
+      321
+    ],
+    "hemEndpoints": [
+      [
+        91,
+        1574
+      ],
+      [
+        1225,
+        1551
+      ]
+    ],
+    "photoWidthInches": 24.8,
+    "photoLengthInches": 28.85,
+    "closestTemplate": "large",
+    "needsReview": false,
+    "standardSize": "large",
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "ivory-crimson-charcoal-standard",
+    "source": "standard-october/originals/6-Photo-6.jpg",
+    "pocketCorners": [
+      [
+        558,
+        528
+      ],
+      [
+        778,
+        520
+      ],
+      [
+        791,
+        760
+      ],
+      [
+        552,
+        760
+      ]
+    ],
+    "bibCenter": [
+      665,
+      376
+    ],
+    "hemEndpoints": [
+      [
+        137,
+        1607
+      ],
+      [
+        1248,
+        1616
+      ]
+    ],
+    "photoWidthInches": 24.2,
+    "photoLengthInches": 28.77,
+    "closestTemplate": "large",
+    "needsReview": false,
+    "standardSize": "large",
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "pearl-linen-standard",
+    "source": "standard-october/originals/7-Photo-7.jpg",
+    "pocketCorners": [
+      [
+        590,
+        545
+      ],
+      [
+        804,
+        550
+      ],
+      [
+        800,
+        762
+      ],
+      [
+        579,
+        755
+      ]
+    ],
+    "bibCenter": [
+      696,
+      411
+    ],
+    "hemEndpoints": [
+      [
+        113,
+        1533
+      ],
+      [
+        1198,
+        1574
+      ]
+    ],
+    "photoWidthInches": 24.95,
+    "photoLengthInches": 29.78,
+    "closestTemplate": "large",
+    "needsReview": false,
+    "standardSize": "large",
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "tangerine-blue-standard",
+    "source": "standard-october/originals/8-Photo-8.jpg",
+    "pocketCorners": [
+      [
+        626,
+        560
+      ],
+      [
+        809,
+        554
+      ],
+      [
+        821,
+        759
+      ],
+      [
+        618,
+        766
+      ]
+    ],
+    "bibCenter": [
+      715,
+      387
+    ],
+    "hemEndpoints": [
+      [
+        248,
+        1430
+      ],
+      [
+        1216,
+        1430
+      ]
+    ],
+    "photoWidthInches": 25.06,
+    "photoLengthInches": 27.88,
+    "closestTemplate": "large",
+    "needsReview": false,
+    "standardSize": "large",
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "charcoal-sage-standard",
+    "source": "standard-september/IMG_0004.jpg",
+    "pocketCorners": [
+      [
+        584,
+        625
+      ],
+      [
+        819,
+        626
+      ],
+      [
+        820,
+        893
+      ],
+      [
+        577,
+        888
+      ]
+    ],
+    "bibCenter": [
+      711,
+      397
+    ],
+    "hemEndpoints": [
+      [
+        165,
+        1688
+      ],
+      [
+        1224,
+        1688
+      ]
+    ],
+    "photoWidthInches": 22.15,
+    "photoLengthInches": 26.79,
+    "closestTemplate": "large",
+    "needsReview": true,
+    "standardSize": null,
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "forest-sunflower-standard",
+    "source": "standard-september/IMG_0002.jpg",
+    "pocketCorners": [
+      [
+        537,
+        576
+      ],
+      [
+        778,
+        574
+      ],
+      [
+        785,
+        834
+      ],
+      [
+        536,
+        838
+      ]
+    ],
+    "bibCenter": [
+      659,
+      353
+    ],
+    "hemEndpoints": [
+      [
+        94,
+        1746
+      ],
+      [
+        1277,
+        1751
+      ]
+    ],
+    "photoWidthInches": 24.14,
+    "photoLengthInches": 29.41,
+    "closestTemplate": "large",
+    "needsReview": false,
+    "standardSize": "large",
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "indigo-ivory-standard",
+    "source": "standard-september/IMG_9996.jpg",
+    "pocketCorners": [
+      [
+        558,
+        678
+      ],
+      [
+        793,
+        678
+      ],
+      [
+        797,
+        938
+      ],
+      [
+        561,
+        937
+      ]
+    ],
+    "bibCenter": [
+      684,
+      449
+    ],
+    "hemEndpoints": [
+      [
+        148,
+        1768
+      ],
+      [
+        1234,
+        1768
+      ]
+    ],
+    "photoWidthInches": 23.06,
+    "photoLengthInches": 27.95,
+    "closestTemplate": "large",
+    "needsReview": false,
+    "standardSize": "large",
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "cobalt-crimson-standard",
+    "source": "cobalt-crimson-standard/original.jpg",
+    "pocketCorners": [
+      [
+        530,
+        605
+      ],
+      [
+        822,
+        603
+      ],
+      [
+        831,
+        821
+      ],
+      [
+        526,
+        822
+      ]
+    ],
+    "bibCenter": [
+      676,
+      386
+    ],
+    "hemEndpoints": [
+      [
+        70,
+        1754
+      ],
+      [
+        1285,
+        1734
+      ]
+    ],
+    "photoWidthInches": 20.35,
+    "photoLengthInches": 34.32,
+    "closestTemplate": "large",
+    "needsReview": true,
+    "standardSize": null,
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  },
+  {
+    "slug": "burgundy-bloom-standard",
+    "source": "IMG_0016/original.jpg",
+    "pocketCorners": [
+      [
+        597,
+        656
+      ],
+      [
+        825,
+        657
+      ],
+      [
+        834,
+        904
+      ],
+      [
+        590,
+        902
+      ]
+    ],
+    "bibCenter": [
+      709,
+      461
+    ],
+    "hemEndpoints": [
+      [
+        126,
+        1762
+      ],
+      [
+        1309,
+        1776
+      ]
+    ],
+    "photoWidthInches": 25.06,
+    "photoLengthInches": 29.17,
+    "closestTemplate": "large",
+    "needsReview": false,
+    "standardSize": "large",
+    "basis": "Photo estimate using user-confirmed 5 x 5.5-inch chest pocket; not measured flat."
+  }
+]

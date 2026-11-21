@@ -8,6 +8,9 @@ export function ProductPrice({
   product: ApronProduct;
   className?: string;
 }) {
+  if (product.showcaseOnly) {
+    return <p data-site-static className={`text-sm font-semibold text-[#e7ad61] ${className}`}>Sold commission. Inspiration only.</p>;
+  }
   return (
     <div className={`flex flex-wrap items-center gap-2 ${className}`}>
       <strong data-site-static className="font-display text-2xl font-semibold leading-none text-white">

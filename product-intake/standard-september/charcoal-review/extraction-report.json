@@ -1,0 +1,16 @@
+{
+  "source": "product-intake/standard-september/IMG_0004.jpg",
+  "source_size": [
+    2160,
+    2880
+  ],
+  "output_size": [
+    2288,
+    3008
+  ],
+  "foreground_components_before_cleanup": 1678,
+  "transparent_pixel_fraction": 0.4989263438786008,
+  "foreground_rgb_exact_match": true,
+  "png_bytes": 2133696,
+  "webp_bytes": 978978
+}

@@ -38,6 +38,8 @@ def draw_profile_path(draw, commands, scale_x, scale_y):
 def extract(source, profile_path, destination, review_dir):
     profile = json.loads(Path(profile_path).read_text())
     original = ImageOps.exif_transpose(Image.open(source)).convert("RGB")
+    if profile.get("rotate_ccw"):
+        original = original.transpose(Image.Transpose.ROTATE_90)
     rgb = np.asarray(original).astype(np.float32)
     red, green, blue = rgb.transpose(2, 0, 1)
     # Each profile is reviewed against its own backdrop and leather colors.
@@ -46,6 +48,11 @@ def extract(source, profile_path, destination, review_dir):
         foreground = red > green * profile["red_green_ratio"]
     elif mode == "warm-backdrop":
         foreground = blue - red > profile["blue_minus_red"]
+    elif mode == "gray-backdrop":
+        # The pale bib and dark ties fall on opposite sides of the gray table.
+        foreground = (red > profile["bright_red_threshold"]) | (
+            np.max(rgb, axis=2) < profile["dark_threshold"]
+        )
     elif mode == "light-backdrop":
         foreground = (np.max(rgb, axis=2) < profile["dark_threshold"]) | (
             (blue - green > 5) & (red - green > 8) & (np.max(rgb, axis=2) < 195)
@@ -57,6 +64,16 @@ def extract(source, profile_path, destination, review_dir):
             (red - green > profile["red_minus_green"])
             & (green < profile["red_region_max_green"])
         )
+    # Dark fabric ties can pick up the colored table's reflected light.
+    for rectangle in profile.get("dark_strap_regions", []):
+        x0, y0, x1, y1 = rectangle
+        sx = original.width / profile["reference_width"]
+        sy = original.height / profile["reference_height"]
+        bounds = (slice(round(y0 * sy), round(y1 * sy)),
+                  slice(round(x0 * sx), round(x1 * sx)))
+        foreground[bounds] |= ((np.max(rgb[bounds], axis=2) < 85)
+                               & (green[bounds] - red[bounds] < 12)
+                               & (blue[bounds] - red[bounds] < profile.get("dark_strap_blue_minus_red", 15)))
     labels, count = ndimage.label(foreground)
     sizes = np.bincount(labels.ravel())
     keep = sizes >= profile["min_component_pixels"]
@@ -117,6 +134,7 @@ def extract(source, profile_path, destination, review_dir):
                     segmentation, None, np.zeros((1, 65)), np.zeros((1, 65)),
                     4, cv2.GC_INIT_WITH_MASK)
         foreground = (segmentation == cv2.GC_FGD) | (segmentation == cv2.GC_PR_FGD)
+        foreground &= np.asarray(excluded) == 0
 
     for region in profile.get("background_cleanup_regions", []):
         x0, y0, x1, y1 = region["bounds"]
@@ -137,10 +155,18 @@ def extract(source, profile_path, destination, review_dir):
             background &= green[bounds] - blue[bounds] >= region["min_green_minus_blue"]
         if "min_red_minus_blue" in region:
             background &= red[bounds] - blue[bounds] >= region["min_red_minus_blue"]
+        if "min_green_minus_red" in region:
+            background &= green[bounds] - red[bounds] >= region["min_green_minus_red"]
         if "edge_band_pixels" in region:
             distance = ndimage.distance_transform_edt(foreground)
             background &= distance[bounds] <= region["edge_band_pixels"]
         foreground[bounds] &= ~background
+
+    # Preserve reviewed strap undersides whose reflected color matches the table.
+    final_protected = Image.new("L", original.size)
+    for path in profile.get("final_protect_paths", []):
+        draw_profile_path(ImageDraw.Draw(final_protected), path, scale_x, scale_y)
+    foreground |= np.asarray(final_protected) > 0
 
     # Smooth only reviewed strap-edge regions, not stitching or thin hardware.
     for region in profile.get("edge_smoothing_regions", []):

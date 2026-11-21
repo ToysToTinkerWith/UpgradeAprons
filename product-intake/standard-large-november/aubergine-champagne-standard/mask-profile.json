@@ -1,0 +1,112 @@
+{
+  "reference_width": 1368,
+  "reference_height": 1824,
+  "min_component_pixels": 80,
+  "max_highlight_hole_pixels": 600,
+  "padding_pixels": 64,
+  "edge_cleanup_radius": 1,
+  "edge_trim_pixels": 1,
+  "grabcut_refine": true,
+  "mode": "light-backdrop",
+  "dark_threshold": 125,
+  "protect_polygons": [
+    [
+      [
+        513,
+        440
+      ],
+      [
+        867,
+        440
+      ],
+      [
+        867,
+        626
+      ],
+      [
+        513,
+        626
+      ]
+    ],
+    [
+      [
+        297,
+        831
+      ],
+      [
+        1094,
+        831
+      ],
+      [
+        1094,
+        1320
+      ],
+      [
+        297,
+        1320
+      ]
+    ]
+  ],
+  "protect_ellipses": [
+    [
+      522,
+      301,
+      550,
+      325
+    ],
+    [
+      513,
+      351,
+      541,
+      375
+    ],
+    [
+      823,
+      298,
+      851,
+      322
+    ],
+    [
+      834,
+      343,
+      862,
+      367
+    ],
+    [
+      229,
+      657,
+      265,
+      688
+    ],
+    [
+      1120,
+      642,
+      1156,
+      673
+    ]
+  ],
+  "background_cleanup_regions": [
+    {
+      "bounds": [
+        0,
+        480,
+        237,
+        1690
+      ],
+      "min_red_minus_blue": 11,
+      "min_green_minus_red": -29,
+      "max_green": 40
+    },
+    {
+      "bounds": [
+        1100,
+        480,
+        1368,
+        1680
+      ],
+      "min_red_minus_blue": 11,
+      "min_green_minus_red": -29,
+      "max_green": 40
+    }
+  ]
+}

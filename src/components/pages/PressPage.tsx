@@ -390,7 +390,7 @@ export function PressPage() {
           animate={reduceMotion ? undefined : "visible"}
         >
           <motion.div className="max-w-[64rem]" variants={fadeUp}>
-            <SectionEyebrow Icon={Sparkles}>Events</SectionEyebrow>
+              <SectionEyebrow Icon={Sparkles}>Markets &amp; Events</SectionEyebrow>
             <h1 className="font-display mt-7 text-[2.85rem] font-semibold leading-[1.15] tracking-[0] text-[#f8f2e9] min-[380px]:text-6xl sm:text-7xl lg:text-8xl">
               <span className="block sm:inline">Upgrade</span>{" "}
               <span className="block sm:inline">Aprons</span>
@@ -404,6 +404,65 @@ export function PressPage() {
               gets seen, worn, adjusted, and talked through in person.
             </p>
           </motion.div>
+
+          <motion.article
+            aria-labelledby="holiday-show-title"
+            data-site-scope="whidbey-art-market-holiday-2026"
+            className="grid overflow-hidden rounded-lg border border-[#d6a25f]/50 bg-[#0e0906]/90 shadow-[0_28px_70px_rgba(0,0,0,0.34)] lg:grid-cols-[1fr_0.85fr]"
+            variants={cardReveal}
+          >
+            <div className="flex flex-col justify-center p-6 sm:p-9 lg:p-12">
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#e7ad61]">
+                Upcoming Event
+              </p>
+              <h2 id="holiday-show-title" className="font-display mt-5 text-4xl font-semibold leading-none text-white sm:text-5xl lg:text-6xl">
+                Whidbey Art Market
+                <span className="mt-3 block text-[#e7ad61]">2026 Holiday Show</span>
+              </h2>
+              <div className="mt-8 space-y-4 text-lg leading-7 text-[#f7f1e8]">
+                <p className="flex items-start gap-3">
+                  <CalendarDays size={22} className="mt-1 shrink-0 text-[#e7ad61]" aria-hidden="true" />
+                  <span>
+                    <time dateTime="2026-11-27">November 27</time> &amp; <time dateTime="2026-11-28">28, 2026</time>
+                    <span className="block text-[#d8cabc]">10am–4pm both days</span>
+                  </span>
+                </p>
+                <p className="flex items-center gap-3">
+                  <MapPin size={22} className="shrink-0 text-[#e7ad61]" aria-hidden="true" />
+                  Freeland Hall
+                </p>
+              </div>
+              <p className="mt-7 max-w-[38rem] text-base leading-7 text-[#d8cabc] sm:text-lg">
+                Join Crispin Roberts and Upgrade Aprons at the Whidbey Art Market
+                Holiday Show. Explore handmade leather aprons and celebrate the
+                creative spirit of Whidbey Island this holiday season.
+              </p>
+              <a
+                href="https://www.whidbeyartmarket.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex min-h-14 items-center justify-center self-start rounded-md bg-[linear-gradient(135deg,#efbd75,#c7802e)] px-6 py-3 text-center text-sm font-semibold uppercase tracking-[0.14em] !text-[#050403] transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e7ad61]"
+              >
+                Visit Whidbey Art Market
+              </a>
+            </div>
+            <a
+              href="/images/events/whidbey-art-market-2026/holiday-show.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open the Whidbey Art Market Holiday Show flyer full size"
+              className="block bg-black focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-[#e7ad61]"
+            >
+              <Image
+                src="/images/events/whidbey-art-market-2026/holiday-show.png"
+                alt="Whidbey Art Market 2026 Holiday Show flyer featuring Crispin Roberts and a leather apron. November 27 and 28, 10am–4pm at Freeland Hall."
+                width={648}
+                height={801}
+                sizes="(min-width: 1024px) 44vw, 100vw"
+                className="h-auto w-full object-contain"
+              />
+            </a>
+          </motion.article>
 
           <motion.div
             className="mx-auto grid w-full max-w-[112rem] gap-6"

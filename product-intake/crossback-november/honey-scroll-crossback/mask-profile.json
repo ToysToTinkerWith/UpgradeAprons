@@ -1,0 +1,41 @@
+{
+  "reference_width": 1368,
+  "reference_height": 1824,
+  "min_component_pixels": 80,
+  "max_highlight_hole_pixels": 700,
+  "padding_pixels": 64,
+  "edge_cleanup_radius": 0,
+  "edge_trim_pixels": 1,
+  "grabcut_refine": true,
+  "mode": "blue-backdrop",
+  "red_green_ratio": 0.91,
+  "dark_strap_regions": [
+    [
+      0,
+      150,
+      1368,
+      1824
+    ]
+  ],
+  "protect_polygons": [
+    [
+      [
+        320,
+        910
+      ],
+      [
+        985,
+        914
+      ],
+      [
+        1012,
+        1290
+      ],
+      [
+        290,
+        1294
+      ]
+    ]
+  ],
+  "dark_strap_blue_minus_red": 35
+}

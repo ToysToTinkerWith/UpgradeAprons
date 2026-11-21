@@ -4,6 +4,7 @@ import { useMemo, useState, type FormEvent } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
+  ArrowRight,
   Check,
   ChevronDown,
   Mail,
@@ -16,11 +17,19 @@ import {
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { ProductImageViewer } from "@/components/ProductImageViewer";
 import { ProductPrice } from "@/components/ProductPrice";
+import { ProductDetailsLink } from "@/components/ProductDetailsLink";
+import { ProductSoldControl } from "@/components/ProductSoldControl";
 import { getFirebaseFirestore, getFirebaseFunctions } from "@/lib/firebase";
 import { useProductCatalog } from "@/lib/product-catalog";
 import { getProductImageSrc } from "@/lib/product-pricing";
+import { getProductSpecDisplayValue } from "@/lib/product-text";
 import type { ApronProduct } from "@/lib/site-data";
 import { apronProducts, getProductHref } from "@/lib/site-data";
+import { JsonLd } from "@/components/JsonLd";
+import { productStructuredData } from "@/lib/product-seo";
+import { SITE_URL } from "@/lib/seo";
+import { ApronMeasurements } from "@/components/ApronMeasurements";
+import { ProductFitControl } from "@/components/ProductFitControl";
 
 type PreferredContact = "Email" | "Phone";
 
@@ -60,7 +69,7 @@ const cardReveal: Variants = {
 };
 
 const PRODUCT_INQUIRY_SUBMIT_TIMEOUT_MS = 30000;
-const PUBLIC_SITE_ORIGIN = "https://upgradeaprons.web.app";
+const PUBLIC_SITE_ORIGIN = SITE_URL;
 
 const initialInquiryForm: ProductInquiryForm = {
   name: "",
@@ -162,7 +171,7 @@ export function ProductDetailPage({ product }: { product: ApronProduct }) {
     "idle" | "submitting" | "success" | "error"
   >("idle");
   const [inquiryMessage, setInquiryMessage] = useState("");
-  const { products: catalogProducts } = useProductCatalog(apronProducts);
+  const { products: catalogProducts, isLoading: catalogLoading, error: catalogError } = useProductCatalog(apronProducts);
   const displayProduct =
     catalogProducts.find((item) => item.slug === product.slug) ?? product;
   const relatedProducts = catalogProducts
@@ -351,7 +360,7 @@ export function ProductDetailPage({ product }: { product: ApronProduct }) {
       className="mt-20"
       variants={cardReveal}
       initial={reduceMotion ? false : "hidden"}
-      whileInView={reduceMotion ? undefined : "visible"}
+      whileInView="visible"
       viewport={{ once: true, amount: 0.18 }}
     >
       <form
@@ -478,7 +487,11 @@ export function ProductDetailPage({ product }: { product: ApronProduct }) {
           type="submit"
         >
           <Mail size={19} aria-hidden="true" />
-          {inquiryStatus === "submitting" ? "Sending" : "Ask About This Apron"}
+          {inquiryStatus === "submitting"
+            ? "Sending"
+            : product.slug === "midnight-pearl-crossback"
+              ? "Send Request"
+              : "Ask About This Apron"}
         </button>
 
         {inquiryMessage ? (
@@ -497,6 +510,7 @@ export function ProductDetailPage({ product }: { product: ApronProduct }) {
 
   return (
     <main className="relative isolate min-h-screen overflow-hidden bg-[#050403] px-6 pb-24 pt-36 text-[#f7f1e8] sm:px-10 sm:pt-40 lg:px-12 lg:pb-32 lg:pt-44">
+      <JsonLd data={productStructuredData(displayProduct, !catalogLoading && !catalogError)} />
       <div
         className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_72%_20%,rgba(214,162,95,0.15),transparent_30%),linear-gradient(180deg,#050403_0%,#090604_48%,#050403_100%)]"
         aria-hidden="true"
@@ -506,7 +520,7 @@ export function ProductDetailPage({ product }: { product: ApronProduct }) {
         className="mx-auto max-w-[112rem]"
         variants={stagger}
         initial={reduceMotion ? false : "hidden"}
-        animate={reduceMotion ? undefined : "visible"}
+        animate="visible"
       >
         <motion.div variants={fadeUp}>
           <Link
@@ -524,6 +538,7 @@ export function ProductDetailPage({ product }: { product: ApronProduct }) {
         >
           <motion.div variants={cardReveal}>
             <ProductImageViewer
+              sold={displayProduct.sold}
               src={getProductImageSrc(displayProduct)}
               alt={displayProduct.title}
               priority
@@ -539,6 +554,7 @@ export function ProductDetailPage({ product }: { product: ApronProduct }) {
               <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3" aria-label="Additional product photos">
                 {displayProduct.alternateImages.map((image, index) => (
                   <ProductImageViewer
+                    sold={displayProduct.sold}
                     key={image}
                     src={image}
                     alt={`${displayProduct.title}, alternate view ${index + 1}`}
@@ -569,6 +585,12 @@ export function ProductDetailPage({ product }: { product: ApronProduct }) {
               <span data-product-field="description">{displayProduct.description}</span>
             </p>
             <ProductPrice product={displayProduct} className="mt-8" />
+            {!displayProduct.showcaseOnly && <ProductSoldControl key={displayProduct.slug} product={displayProduct} catalogReady={!catalogLoading && !catalogError} />}
+            {displayProduct.showcaseOnly && <div className="mt-6 border-l-2 border-[#d6a25f] pl-5" data-site-static>
+              <p className="font-semibold text-white">Sold. Not available to purchase.</p>
+              <p className="mt-2 text-base leading-7 text-[#d8cabc]">An example of what a custom layout can become. Use it as a starting point for your own apron.</p>
+              <Link href="/custom" className="mt-4 inline-flex min-h-12 items-center gap-2 rounded-md bg-[#d6a25f] px-5 py-3 text-sm font-semibold !text-[#050403] hover:bg-[#efbd75]">Design your own <ArrowRight size={18} aria-hidden="true" /></Link>
+            </div>}
             <div className="mt-10 grid gap-5 sm:grid-cols-3">
               {displayProduct.specs.map((spec, index) => (
                 <div
@@ -579,21 +601,26 @@ export function ProductDetailPage({ product }: { product: ApronProduct }) {
                     <span data-product-field="specs" data-product-index={index} data-product-part="label">{spec.label}</span>
                   </span>
                   <strong className="mt-3 block font-display text-2xl font-semibold leading-tight text-white">
-                    <span data-product-field="specs" data-product-index={index} data-product-part="value">{spec.value}</span>
+                    <span data-product-field="specs" data-product-index={index} data-product-part="value">{getProductSpecDisplayValue(spec)}</span>
                   </strong>
                 </div>
               ))}
             </div>
+            <Link href="/leather-hardware" className="mt-5 inline-flex min-h-12 items-center gap-3 text-sm text-[#e7ad61] underline-offset-4 hover:underline">
+              About the leather &amp; hardware <ArrowRight size={17} aria-hidden="true" />
+            </Link>
+            <ApronMeasurements product={displayProduct} />
+            <ProductFitControl key={displayProduct.slug} product={displayProduct} catalogReady={!catalogLoading && !catalogError} />
           </motion.div>
         </section>
 
-        {inquiryFormCard}
+        {!displayProduct.showcaseOnly && inquiryFormCard}
 
         <motion.section
           className="mt-20 grid gap-8 lg:grid-cols-[0.84fr_1fr]"
           variants={stagger}
           initial={reduceMotion ? false : "hidden"}
-          whileInView={reduceMotion ? undefined : "visible"}
+          whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.article
@@ -646,11 +673,9 @@ export function ProductDetailPage({ product }: { product: ApronProduct }) {
             </div>
             <div className="mt-8 border-t border-white/12 pt-7">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#e7ad61]">
-                Pricing
+                {displayProduct.showcaseOnly ? "Completed commission" : `${displayProduct.category} Price`}
               </p>
-              <p className="mt-3 text-base leading-7 text-[#d8cabc]">
-                <span data-product-field="priceNote">{displayProduct.priceNote}</span>
-              </p>
+              <ProductPrice product={displayProduct} className="mt-3" />
             </div>
             <Link
               href="/products"
@@ -666,7 +691,7 @@ export function ProductDetailPage({ product }: { product: ApronProduct }) {
           className="mt-20"
           variants={stagger}
           initial={reduceMotion ? false : "hidden"}
-          whileInView={reduceMotion ? undefined : "visible"}
+          whileInView="visible"
           viewport={{ once: true, amount: 0.18 }}
         >
           <motion.div variants={fadeUp}>
@@ -688,6 +713,7 @@ export function ProductDetailPage({ product }: { product: ApronProduct }) {
                 variants={cardReveal}
               >
                 <ProductImageViewer
+                  sold={related.sold}
                   src={getProductImageSrc(related)}
                   alt={related.title}
                   sizes="(min-width: 1024px) 31vw, 100vw"
@@ -708,12 +734,7 @@ export function ProductDetailPage({ product }: { product: ApronProduct }) {
                     <span data-product-field="intro">{related.intro}</span>
                   </p>
                   <ProductPrice product={related} className="mt-5" />
-                  <Link
-                    href={getProductHref(related)}
-                    className="mt-6 inline-flex text-sm font-semibold uppercase tracking-[0.18em] text-[#e7ad61] transition hover:text-white"
-                  >
-                    View Details
-                  </Link>
+                  <ProductDetailsLink product={related} />
                 </div>
               </motion.article>
             ))}

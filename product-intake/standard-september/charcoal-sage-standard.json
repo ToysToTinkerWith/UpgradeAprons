@@ -1,0 +1,26 @@
+{
+  "mode": "light-backdrop",
+  "dark_threshold": 140,
+  "reference_width": 1368,
+  "reference_height": 1824,
+  "min_component_pixels": 100,
+  "max_highlight_hole_pixels": 4000,
+  "padding_pixels": 64,
+  "grabcut_refine": true,
+  "edge_cleanup_radius": 1,
+  "edge_trim_pixels": 1,
+  "protect_polygons": [
+    [[280,1135],[1115,1135],[1120,1595],[270,1595]]
+  ],
+  "protect_paths": [
+    [["M",618,23],["C",650,-4,740,-4,795,19],["L",793,57],["C",731,31,674,15,620,53]]
+  ],
+  "background_cleanup_regions": [
+    {"bounds":[60,470,270,1700],"polygon":[[60,470],[230,470],[230,825],[207,900],[157,1690],[60,1700]],"max_green":40,"min_red_minus_blue":5},
+    {"bounds":[1190,460,1330,1700],"polygon":[[1190,460],[1330,460],[1330,1700],[1235,1700],[1205,900]],"max_green":40,"min_red_minus_blue":5}
+  ],
+  "remove_paths": [
+    [["M",619,60],["C",664,18,726,28,792,61],["L",795,130],["L",613,130]]
+  ],
+  "protect_ellipses": [[208,845,259,896],[1140,855,1192,906]]
+}

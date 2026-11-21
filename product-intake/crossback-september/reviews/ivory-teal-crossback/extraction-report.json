@@ -1,0 +1,16 @@
+{
+  "source": "product-intake/crossback-september/originals/IMG_0057.jpg",
+  "source_size": [
+    2160,
+    2880
+  ],
+  "output_size": [
+    2288,
+    3008
+  ],
+  "foreground_components_before_cleanup": 487,
+  "transparent_pixel_fraction": 0.4343499228395062,
+  "foreground_rgb_exact_match": true,
+  "png_bytes": 3354043,
+  "webp_bytes": 1431674
+}

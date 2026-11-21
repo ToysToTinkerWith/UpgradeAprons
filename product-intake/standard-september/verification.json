@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "charcoal-sage-standard",
+    "original_rgb_preserved": true,
+    "lossless_webp": true,
+    "intact_body_and_pockets": true,
+    "components": 1,
+    "sampled_straps_and_backdrop": true
+  },
+  {
+    "slug": "forest-sunflower-standard",
+    "original_rgb_preserved": true,
+    "lossless_webp": true,
+    "intact_body_and_pockets": true,
+    "components": 1,
+    "sampled_straps_and_backdrop": true
+  },
+  {
+    "slug": "indigo-ivory-standard",
+    "original_rgb_preserved": true,
+    "lossless_webp": true,
+    "intact_body_and_pockets": true,
+    "components": 1,
+    "sampled_straps_and_backdrop": true
+  }
+]

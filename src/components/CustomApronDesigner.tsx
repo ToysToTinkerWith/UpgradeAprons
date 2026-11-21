@@ -34,6 +34,7 @@ import {
   type PointerEvent as ReactPointerEvent,
 } from "react";
 import { getFirebaseFirestore, getFirebaseFunctions } from "@/lib/firebase";
+import standardTemplates from "@/data/standard-apron-templates.json";
 
 type ApronKind = "full" | "half";
 
@@ -81,8 +82,6 @@ type ContactForm = {
   email: string;
   phone: string;
   preferredContact: PreferredContact;
-  wearerHeightFeet: string;
-  wearerHeightInches: string;
   useCase: string;
   notes: string;
 };
@@ -145,10 +144,7 @@ const APRON_TEMPLATES: ApronTemplate[] = [
     shortName: "Std Large",
     description: '22.5" wide x 28" tall with a 9" bib.',
     kind: "full",
-    totalWidth: 22.5,
-    totalHeight: 28,
-    bibWidth: 9,
-    bodyHeight: 17,
+    ...standardTemplates.large,
     defaultColor: "#52665f",
   },
   {
@@ -157,10 +153,7 @@ const APRON_TEMPLATES: ApronTemplate[] = [
     shortName: "Std Small",
     description: '20.5" wide x 26" tall with a 7.5" bib.',
     kind: "full",
-    totalWidth: 20.5,
-    totalHeight: 26,
-    bibWidth: 7.5,
-    bodyHeight: 16,
+    ...standardTemplates.small,
     defaultColor: "#6d687f",
   },
   {
@@ -225,8 +218,6 @@ const initialForm: ContactForm = {
   email: "",
   phone: "",
   preferredContact: "Email",
-  wearerHeightFeet: "",
-  wearerHeightInches: "",
   useCase: "",
   notes: "",
 };
@@ -939,17 +930,6 @@ function buildDesignPayload(
   };
 }
 
-function formatWearerHeight(form: ContactForm) {
-  const feet = form.wearerHeightFeet.trim();
-  const inches = form.wearerHeightInches.trim();
-
-  if (!feet && !inches) {
-    return "";
-  }
-
-  return `${feet || "0"} ft ${inches || "0"} in`;
-}
-
 function getPreferredContact(
   email: string,
   phone: string,
@@ -975,7 +955,6 @@ function buildFallbackEmailHref(
   submissionMode: SubmissionMode,
   uploadedDesignImage: UploadedDesignImage | null,
 ) {
-  const wearerHeight = formatWearerHeight(form);
   const email = form.email.trim();
   const phone = form.phone.trim();
   const useCase = form.useCase.trim();
@@ -1005,7 +984,6 @@ function buildFallbackEmailHref(
     email ? `Email: ${email}` : "",
     phone ? `Phone: ${phone}` : "",
     `Preferred Contact: ${preferredContact}`,
-    wearerHeight ? `Wearer Height: ${wearerHeight}` : "",
     "",
     isUploadSubmission ? "Uploaded Image" : "Apron",
     isUploadSubmission
@@ -1488,7 +1466,6 @@ export function CustomApronDesigner() {
     setMessage("");
     setShowFallbackEmail(false);
 
-    const wearerHeight = formatWearerHeight(form);
     let designPngDataUrl = "";
 
     if (!isUploadSubmission) {
@@ -1504,9 +1481,6 @@ export function CustomApronDesigner() {
       email,
       phone,
       preferredContact,
-      wearerHeight,
-      wearerHeightFeet: form.wearerHeightFeet.trim(),
-      wearerHeightInches: form.wearerHeightInches.trim(),
       useCase: form.useCase.trim(),
       notes: form.notes.trim(),
       submissionMode: isUploadSubmission ? "uploaded-image" : "design-tool",
@@ -2472,7 +2446,7 @@ export function CustomApronDesigner() {
               </label>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2">
               <label className={contactFieldLabelClass}>
                 Phone
                 <input
@@ -2507,45 +2481,6 @@ export function CustomApronDesigner() {
                   />
                 </span>
               </label>
-              <div
-                aria-labelledby="wearer-height-label"
-                className={contactFieldLabelClass}
-                role="group"
-              >
-                <span id="wearer-height-label">Wearer Height</span>
-                <div className="grid h-12 grid-cols-2 gap-2 sm:gap-3">
-                  <label className="block min-w-0">
-                    <span className="sr-only">Feet</span>
-                    <input
-                      className={`${contactFieldControlClass} h-12 px-3`}
-                      inputMode="numeric"
-                      max="8"
-                      min="0"
-                      onChange={(event) =>
-                        updateField("wearerHeightFeet", event.target.value)
-                      }
-                      placeholder="Feet"
-                      type="number"
-                      value={form.wearerHeightFeet}
-                    />
-                  </label>
-                  <label className="block min-w-0">
-                    <span className="sr-only">Inches</span>
-                    <input
-                      className={`${contactFieldControlClass} h-12 px-3`}
-                      inputMode="numeric"
-                      max="11"
-                      min="0"
-                      onChange={(event) =>
-                        updateField("wearerHeightInches", event.target.value)
-                      }
-                      placeholder="In"
-                      type="number"
-                      value={form.wearerHeightInches}
-                    />
-                  </label>
-                </div>
-              </div>
             </div>
 
             <label className={contactFieldLabelClass}>

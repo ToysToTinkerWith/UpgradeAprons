@@ -1,0 +1,16 @@
+{
+  "source": "C:/Users/aberg/.codex/codex-remote-attachments/01a05ee2-dbba-7fa0-8256-03a251972b54/73DCE6C3-B949-4C1A-B7E0-28BC8FAA11C9/1-Photo-1.jpg",
+  "source_size": [
+    2880,
+    3840
+  ],
+  "output_size": [
+    2928,
+    3888
+  ],
+  "foreground_components_before_cleanup": 0,
+  "transparent_pixel_fraction": 0.5251131184895833,
+  "foreground_rgb_exact_match": true,
+  "png_bytes": 7246584,
+  "webp_bytes": 2849350
+}

@@ -2,6 +2,13 @@ import type { ApronProduct } from "@/lib/site-data";
 
 const textFields = ["title", "category", "eyebrow", "intro", "description", "material", "finish", "priceNote"] as const;
 type TextField = typeof textFields[number];
+
+export function getProductSpecDisplayValue(spec: ApronProduct["specs"][number]) {
+  if (!/^pockets?$/i.test(spec.label.trim())) return spec.value;
+  const count = spec.value.match(/^\s*(\d+)\s*(?:compartments?|pockets?)?\s*$/i);
+  return count ? count[1] : spec.value;
+}
+
 export type ProductTextBinding = {
   slug: string;
   field: TextField | "details" | "layoutTags" | "specs";

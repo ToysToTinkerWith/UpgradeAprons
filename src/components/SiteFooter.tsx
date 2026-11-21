@@ -3,13 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Mail, Phone, Sparkles } from "lucide-react";
+import { DiscoverMenu } from "@/components/DiscoverMenu";
 
 const exploreLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/products", label: "Aprons" },
-  { href: "/events", label: "Events" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export function SiteFooter() {
@@ -26,7 +25,7 @@ export function SiteFooter() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_64%_12%,rgba(214,162,95,0.15),transparent_42%),radial-gradient(ellipse_at_18%_88%,rgba(43,140,134,0.1),transparent_36%),radial-gradient(ellipse_at_92%_74%,rgba(185,84,56,0.09),transparent_38%),linear-gradient(180deg,#050403_0%,#090604_48%,#050403_100%)]"
         aria-hidden="true"
       />
-      <div className="relative z-10 mx-auto grid max-w-[112rem] gap-12 lg:grid-cols-[1fr_0.42fr_1.2fr] lg:items-start">
+      <div className="relative z-10 mx-auto grid max-w-[112rem] gap-12 lg:grid-cols-[1fr_0.65fr_1.2fr] lg:items-start">
         <section aria-label="Upgrade Aprons">
           <Link
             href="/"
@@ -54,14 +53,19 @@ export function SiteFooter() {
           </h2>
           <div className="mb-2 h-px w-14 bg-[#d6a25f]" />
           {exploreLinks.map((link) => (
-            <Link
-              href={link.href}
-              key={link.href}
-              className="border-b border-white/10 pb-4 text-sm font-semibold uppercase tracking-[0.18em] text-white/72 transition duration-200 hover:translate-x-1 hover:text-[#e7ad61]"
-            >
-              {link.label}
-            </Link>
+            <div key={link.href} className="border-b border-white/10 pb-4">
+              <Link
+                href={link.href}
+                className="inline-block text-sm font-semibold uppercase tracking-[0.18em] text-white/72 transition duration-200 hover:translate-x-1 hover:text-[#e7ad61]"
+              >
+                {link.label}
+              </Link>
+            </div>
           ))}
+          <DiscoverMenu key={pathname} footer />
+          <Link href="/contact" data-site-scope="footer-contact" className="border-b border-white/10 pb-4 text-sm font-semibold uppercase tracking-[0.18em] text-white/72 transition duration-200 hover:translate-x-1 hover:text-[#e7ad61]">
+            Contact
+          </Link>
         </nav>
 
         <section
@@ -139,6 +143,15 @@ export function SiteFooter() {
           </Link>
         </div>
       </div>
+      <p className="relative z-10 mx-auto mt-6 max-w-[112rem] text-sm leading-6 text-[#c7b7a2]">
+        Website made by{" "}
+        <a
+          href="https://bergquistapplications.com/"
+          className="text-[#e7ad61] underline decoration-[#d6a25f]/50 underline-offset-4 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d6a25f]"
+        >
+          Bergquist Applications
+        </a>
+      </p>
     </footer>
   );
 }

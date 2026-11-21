@@ -8,17 +8,19 @@ import {
   Scissors,
   type LucideIcon,
 } from "lucide-react";
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { ProductImageViewer } from "@/components/ProductImageViewer";
 import { ProductPrice } from "@/components/ProductPrice";
+import { ProductDetailsLink } from "@/components/ProductDetailsLink";
 import { CatalogEmptyState } from "@/components/CatalogEmptyState";
+import { StandardSizeFilter, type SizeFilter } from "@/components/StandardSizeFilter";
+import { getStandardSizeLabel } from "@/lib/product-sizing";
 import { useProductCatalog } from "@/lib/product-catalog";
 import { getProductImageSrc } from "@/lib/product-pricing";
 import {
   apronCategories,
   apronProducts,
   getCategoryHref,
-  getProductHref,
 } from "@/lib/site-data";
 
 const ALL_CATEGORIES = "All";
@@ -54,8 +56,8 @@ const cardReveal: Variants = {
 };
 
 export function ProductsPage() {
-  const reduceMotion = useReducedMotion();
   const [activeCategory, setActiveCategory] = useState(ALL_CATEGORIES);
+  const [size, setSize] = useState<SizeFilter>("all");
   const { products: catalogProducts } = useProductCatalog(apronProducts);
 
   const filteredProducts = useMemo(() => {
@@ -63,8 +65,9 @@ export function ProductsPage() {
       return catalogProducts;
     }
 
-    return catalogProducts.filter((product) => product.category === activeCategory);
-  }, [activeCategory, catalogProducts]);
+    return catalogProducts.filter((product) => product.category === activeCategory &&
+      (activeCategory !== "Standard" || size === "all" || product.standardSize === size));
+  }, [activeCategory, catalogProducts, size]);
 
   return (
     <main className="relative isolate min-h-screen overflow-hidden bg-[#050403] px-6 pb-24 pt-36 text-[#f7f1e8] sm:px-10 sm:pt-40 lg:px-12 lg:pb-32 lg:pt-44">
@@ -76,22 +79,29 @@ export function ProductsPage() {
       <motion.section
         className="mx-auto mb-14 max-w-[58rem] text-center sm:mb-18"
         variants={stagger}
-        initial={reduceMotion ? false : "hidden"}
-        animate={reduceMotion ? undefined : "visible"}
+        initial={false}
+        animate="visible"
       >
+        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-[#d8cabc]">
+          <ol className="flex flex-wrap items-center justify-center gap-2">
+            <li><Link href="/" className="underline underline-offset-4 hover:text-[#e7ad61]">Home</Link></li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page">Aprons</li>
+          </ol>
+        </nav>
         <motion.p
           className="inline-flex items-center justify-center gap-4 text-[0.82rem] font-bold uppercase tracking-[0.24em] text-[#e7ad61] sm:text-[0.95rem]"
           variants={fadeUp}
         >
           <Scissors size={30} strokeWidth={1.45} aria-hidden="true" />
-          <span>Our Aprons</span>
+          <span>Handcrafted leather collection</span>
         </motion.p>
         <motion.h1
           className="font-display mt-7 text-6xl font-semibold leading-[0.96] text-[#f8f2e9] sm:text-7xl lg:text-8xl"
           variants={fadeUp}
         >
-          Explore the
-          <span className="text-[#e7ad61]"> work.</span>
+          Upgrade
+          <span className="text-[#e7ad61]"> Aprons.</span>
         </motion.h1>
         <motion.div
           className="mx-auto my-7 h-[3px] w-16 bg-[#d6a25f]"
@@ -101,17 +111,17 @@ export function ProductsPage() {
           className="mx-auto max-w-[46rem] text-lg leading-8 text-[#d8cabc] sm:text-xl"
           variants={fadeUp}
         >
-          Browse crossback, standard, and half apron builds, then open a detail page for
-          material, pocket layout, finish, and custom-order notes.
+          Handcrafted leather aprons made by Crispin on Whidbey Island.
+          Explore standard, crossback, and half aprons in distinctive colors and
+          pocket layouts, with photos and prices for each design.
         </motion.p>
       </motion.section>
 
       <motion.div
         className="mx-auto mb-12 flex max-w-[80rem] flex-wrap justify-center gap-3"
         variants={stagger}
-        initial={reduceMotion ? false : "hidden"}
-        whileInView={reduceMotion ? undefined : "visible"}
-        viewport={{ once: true, amount: 0.2 }}
+        initial={false}
+        animate="visible"
       >
         {[ALL_CATEGORIES, ...apronCategories.map((category) => category.title)].map((category) => {
           const isActive = activeCategory === category;
@@ -130,7 +140,7 @@ export function ProductsPage() {
                   : "border-[#d6a25f]/42 bg-[#0e0906]/72 text-white/76 hover:-translate-y-0.5 hover:border-[#d6a25f] hover:text-white"
               }`}
               key={category}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => { setActiveCategory(category); setSize("all"); }}
               type="button"
               variants={fadeUp}
             >
@@ -147,14 +157,17 @@ export function ProductsPage() {
         })}
       </motion.div>
 
+      {activeCategory === "Standard" && <div className="mx-auto mb-10 max-w-[112rem]"><StandardSizeFilter products={catalogProducts.filter(product => product.categorySlug === "standard")} value={size} onChange={setSize} /></div>}
+      {activeCategory === "Custom" && <div className="mx-auto mb-10 max-w-[112rem] text-[#d8cabc]"><p>Completed commissions, shown for inspiration. These pieces have sold.</p><Link href="/custom" className="mt-4 inline-block py-2 font-semibold text-[#e7ad61] underline underline-offset-4">Start your custom design</Link></div>}
+
       <motion.section
         className="mx-auto grid max-w-[112rem] gap-6 md:grid-cols-2 xl:grid-cols-4"
         variants={stagger}
-        initial={reduceMotion ? false : "hidden"}
-        animate={reduceMotion ? undefined : "visible"}
-        key={activeCategory}
+        initial={false}
+        animate="visible"
+        key={`${activeCategory}-${size}`}
       >
-        {filteredProducts.length === 0 ? <CatalogEmptyState /> : null}
+        {filteredProducts.length === 0 ? activeCategory === "Standard" && size !== "all" ? <p role="status" className="col-span-full text-[#d8cabc]">No aprons have a confirmed {size} size yet. Browse All sizes or contact us for fit advice.</p> : <CatalogEmptyState /> : null}
         {filteredProducts.map((product) => {
           const Icon = iconMap[product.category] ?? Scissors;
 
@@ -178,6 +191,7 @@ export function ProductsPage() {
                 <Icon size={28} strokeWidth={1.35} aria-hidden="true" />
               </div>
               <ProductImageViewer
+                sold={product.sold}
                 src={getProductImageSrc(product)}
                 alt={product.title}
                 sizes="(min-width: 1280px) 24vw, (min-width: 768px) 48vw, 100vw"
@@ -211,30 +225,8 @@ export function ProductsPage() {
                   <span data-product-field="intro">{product.intro}</span>
                 </p>
                 <ProductPrice product={product} className="mt-6" />
-                <div className="mt-7 grid grid-cols-2 gap-5 border-t border-white/12 pt-6 text-sm">
-                  <div>
-                    <span className="block text-xs font-bold uppercase tracking-[0.14em] text-[#e7ad61]">
-                      Material
-                    </span>
-                    <strong className="mt-2 block font-medium text-white/86">
-                      <span data-product-field="material">{product.material}</span>
-                    </strong>
-                  </div>
-                  <div className="border-l border-white/18 pl-5">
-                    <span className="block text-xs font-bold uppercase tracking-[0.14em] text-[#e7ad61]">
-                      Finish
-                    </span>
-                    <strong className="mt-2 block font-medium text-white/86">
-                      <span data-product-field="finish">{product.finish}</span>
-                    </strong>
-                  </div>
-                </div>
-                <Link
-                  href={getProductHref(product)}
-                  className="mt-auto inline-flex pt-8 text-sm font-semibold uppercase tracking-[0.18em] text-[#e7ad61] transition hover:text-white"
-                >
-                  View Details
-                </Link>
+                {product.categorySlug === "standard" && <p data-site-static className="mt-3 text-sm text-[#d8cabc]">{getStandardSizeLabel(product)}</p>}
+                <ProductDetailsLink product={product} />
               </div>
             </motion.article>
           );

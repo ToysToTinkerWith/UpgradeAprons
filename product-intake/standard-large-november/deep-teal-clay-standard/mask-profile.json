@@ -1,0 +1,88 @@
+{
+  "reference_width": 1368,
+  "reference_height": 1824,
+  "min_component_pixels": 80,
+  "max_highlight_hole_pixels": 600,
+  "padding_pixels": 64,
+  "edge_cleanup_radius": 1,
+  "edge_trim_pixels": 1,
+  "grabcut_refine": true,
+  "mode": "warm-backdrop",
+  "blue_minus_red": -14,
+  "protect_polygons": [
+    [
+      [
+        592,
+        441
+      ],
+      [
+        822,
+        441
+      ],
+      [
+        822,
+        650
+      ],
+      [
+        592,
+        650
+      ]
+    ],
+    [
+      [
+        298,
+        807
+      ],
+      [
+        1108,
+        807
+      ],
+      [
+        1108,
+        1276
+      ],
+      [
+        298,
+        1276
+      ]
+    ]
+  ],
+  "protect_ellipses": [
+    [
+      543,
+      309,
+      571,
+      333
+    ],
+    [
+      536,
+      351,
+      564,
+      375
+    ],
+    [
+      839,
+      312,
+      867,
+      336
+    ],
+    [
+      846,
+      357,
+      874,
+      381
+    ],
+    [
+      247,
+      631,
+      283,
+      662
+    ],
+    [
+      1120,
+      638,
+      1156,
+      669
+    ]
+  ]
+}

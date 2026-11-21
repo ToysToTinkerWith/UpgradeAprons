@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -16,15 +16,17 @@ import {
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { ProductImageViewer } from "@/components/ProductImageViewer";
 import { ProductPrice } from "@/components/ProductPrice";
+import { ProductDetailsLink } from "@/components/ProductDetailsLink";
 import { CatalogEmptyState } from "@/components/CatalogEmptyState";
 import { WorkshopTable } from "@/components/WorkshopTable";
+import { discoverLinks } from "@/lib/discover";
 import { useProductCatalog } from "@/lib/product-catalog";
 import { getProductImageSrc } from "@/lib/product-pricing";
-import { apronCategories, apronProducts, getProductHref } from "@/lib/site-data";
+import { apronCategories, apronProducts } from "@/lib/site-data";
 
 const featureCards = [
   {
-    title: "Repurposed Genuine Top-Grain Leather",
+    title: "Repurposed Top-Grain Leather",
     copy: "Beautiful 100% natural top-grain leather from 40+ years of upholstery remnants outlasts other materials and gains patina with use.",
     Icon: Recycle,
   },
@@ -34,7 +36,7 @@ const featureCards = [
     Icon: Ruler,
   },
   {
-    title: "Built by Hand",
+    title: "Handcrafted",
     copy: "Each piece is cut, stitched, and finished with practical craft earned through decades of upholstery work.",
     Icon: Scissors,
   },
@@ -67,17 +69,16 @@ const fadeUp: Variants = {
   },
 };
 
-const instantFadeUp: Variants = {
-  hidden: { opacity: 0, y: 22 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0 } },
+const instantSplashReveal: Variants = {
+  hidden: { opacity: 1, x: 0, y: 0 },
+  visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0 } },
 };
 
-const splashFadeUp: Variants = {
-  ...fadeUp,
+const splashReveal: Variants = {
+  hidden: { opacity: 0, x: 0, y: 18 },
   visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 1.25, ease: easeOut },
+    opacity: 1, x: 0, y: 0,
+    transition: { duration: 1.05, ease: easeOut },
   },
 };
 
@@ -140,18 +141,20 @@ function FeatureCard({
 
 export function HomePage() {
   const reduceMotion = useReducedMotion();
-  const [apronsLanded, setApronsLanded] = useState(false);
-  const handleApronsLanded = useCallback(() => setApronsLanded(true), []);
+  const [apronsVisible, setApronsVisible] = useState(false);
+  const handleApronsVisible = useCallback(() => setApronsVisible(true), []);
   const [activeProductFilter, setActiveProductFilter] =
     useState<ProductFilterSlug>("standard");
   const [productPageIndex, setProductPageIndex] = useState(0);
   const [productsPerView, setProductsPerView] = useState(3);
+  const productGesture = useRef<{ id: number; x: number; y: number; horizontal: boolean } | null>(null);
+  const suppressProductClick = useRef(false);
   const { products: catalogProducts } = useProductCatalog(apronProducts);
-  const showSplashCopy = apronsLanded || catalogProducts.length === 0;
-  const splashFade = reduceMotion ? instantFadeUp : splashFadeUp;
+  const showSplashCopy = apronsVisible || catalogProducts.length === 0;
+  const splashFade = reduceMotion ? instantSplashReveal : splashReveal;
 
   useEffect(() => {
-    const oneColumnQuery = window.matchMedia("(max-width: 639px)");
+    const oneColumnQuery = window.matchMedia("(max-width: 767px)");
     const twoColumnQuery = window.matchMedia("(max-width: 1279px)");
 
     const updateProductsPerView = () => {
@@ -255,9 +258,9 @@ export function HomePage() {
           <motion.p
             className="mt-7 max-w-[34rem] text-base leading-7 text-[#efe0ce] sm:text-xl sm:leading-8"
           >
-            Repurposed genuine top-grain leather crossback, standard, and half aprons built
-            with practical pocket layouts, durable hardware, and unique
-            character.
+            Handcrafted on Whidbey Island from repurposed genuine top-grain leather.
+            Crossback, standard, and half aprons with practical pockets for
+            cooking, gardening, and workshop days.
           </motion.p>
           <motion.div
             className="workshop-hero-actions mt-9 flex flex-col gap-4 sm:flex-row sm:items-start"
@@ -276,7 +279,7 @@ export function HomePage() {
             </Link>
           </motion.div>
         </motion.div>
-        <WorkshopTable products={catalogProducts} onIntroComplete={handleApronsLanded} />
+        <WorkshopTable products={catalogProducts} onIntroComplete={handleApronsVisible} />
         </div>
 
         <motion.div
@@ -397,7 +400,7 @@ export function HomePage() {
             <motion.div variants={fadeUp}>
               <div className="h-[3px] w-16 bg-[#d6a25f]" />
               <p className="mt-7 max-w-[48rem] text-lg leading-8 text-[#d8cabc] sm:text-xl">
-                Browse crossback, standard, and half apron builds, then open a detail page
+                Browse standard, half, and crossback apron builds, then open a detail page
                 to compare materials, pocket layouts, specs, and custom-order
                 guidance.
               </p>
@@ -480,8 +483,56 @@ export function HomePage() {
               </button>
             </div>
 
+            <div
+              className="min-w-0 sm:col-start-2"
+              data-apron-carousel
+              style={{ touchAction: "pan-y pinch-zoom" }}
+              onPointerDown={(event) => {
+                suppressProductClick.current = false;
+                if (!event.isPrimary || event.button !== 0 || productPageCount <= 1) {
+                  productGesture.current = null;
+                  return;
+                }
+                productGesture.current = { id: event.pointerId, x: event.clientX, y: event.clientY, horizontal: false };
+              }}
+              onPointerMove={(event) => {
+                const gesture = productGesture.current;
+                if (!gesture || gesture.id !== event.pointerId) return;
+                const dx = Math.abs(event.clientX - gesture.x);
+                const dy = Math.abs(event.clientY - gesture.y);
+                if (!gesture.horizontal && dy > 12 && dy >= dx) {
+                  productGesture.current = null;
+                  return;
+                }
+                if (!gesture.horizontal && dx > 12 && dx > dy * 1.25) {
+                  gesture.horizontal = true;
+                  suppressProductClick.current = true;
+                  event.currentTarget.setPointerCapture(event.pointerId);
+                }
+              }}
+              onPointerUp={(event) => {
+                const gesture = productGesture.current;
+                productGesture.current = null;
+                if (!gesture || gesture.id !== event.pointerId) return;
+                const dx = event.clientX - gesture.x;
+                if (gesture.horizontal && Math.abs(dx) >= 50) moveProducts(dx < 0 ? 1 : -1);
+                if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+                  event.currentTarget.releasePointerCapture(event.pointerId);
+                }
+              }}
+              onPointerCancel={() => { productGesture.current = null; }}
+              onDragStart={(event) => event.preventDefault()}
+              onClickCapture={(event) => {
+                // A swipe must not also open the photo or follow a card link.
+                if (suppressProductClick.current && event.detail !== 0) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                suppressProductClick.current = false;
+              }}
+            >
             <motion.div
-              className="grid gap-6 sm:col-start-2 md:grid-cols-2 xl:grid-cols-3"
+              className="grid min-w-0 gap-6 md:grid-cols-2 xl:grid-cols-3"
               key={`${activeProductFilter}-${activeProductPageIndex}-${productsPerView}`}
               variants={stagger}
               initial={reduceMotion ? false : "hidden"}
@@ -495,13 +546,16 @@ export function HomePage() {
                   className="group flex min-h-[36rem] flex-col overflow-hidden rounded-lg border border-white/16 bg-[#0e0906]/76 shadow-[0_24px_62px_rgba(0,0,0,0.34)]"
                   variants={cardReveal}
                 >
+                  <div className="m-5 mb-0">
                   <ProductImageViewer
+                    sold={product.sold}
                     src={getProductImageSrc(product)}
                     alt={product.title}
                     sizes="(min-width: 1280px) 30vw, (min-width: 768px) 44vw, 100vw"
-                    frameClassName="m-5 mb-0 aspect-[1.08] overflow-hidden rounded-md bg-[radial-gradient(circle_at_50%_35%,rgba(214,162,95,0.14),transparent_58%),linear-gradient(145deg,#18110d,#070504)]"
+                    frameClassName="aspect-[1.08] overflow-hidden rounded-md bg-[radial-gradient(circle_at_50%_35%,rgba(214,162,95,0.14),transparent_58%),linear-gradient(145deg,#18110d,#070504)]"
                     imageClassName="object-contain object-center p-5 opacity-90 transition duration-700 group-hover:scale-[1.035] group-hover:opacity-100"
                   />
+                  </div>
                   <div className="relative z-10 flex flex-1 flex-col justify-end p-7 sm:p-8">
                     <p
                       className="text-xs font-bold uppercase tracking-[0.2em]"
@@ -520,16 +574,12 @@ export function HomePage() {
                       <span data-product-field="intro">{product.intro}</span>
                     </p>
                     <ProductPrice product={product} className="mt-6" />
-                    <Link
-                      href={getProductHref(product)}
-                      className="mt-7 inline-flex text-sm font-semibold uppercase tracking-[0.18em] text-[#e7ad61] transition hover:text-white"
-                    >
-                      View Details
-                    </Link>
+                    <ProductDetailsLink product={product} />
                   </div>
                 </motion.article>
               ))}
             </motion.div>
+            </div>
 
             <button
               type="button"
@@ -542,7 +592,7 @@ export function HomePage() {
             </button>
           </div>
 
-          <div className="mt-8 flex justify-center gap-3" aria-label="Apron carousel position">
+          <div className="mt-8 flex flex-wrap justify-center gap-3" aria-label="Apron carousel position">
             {Array.from({ length: productPageCount }).map((_, index) => (
               <button
                 type="button"
@@ -570,46 +620,40 @@ export function HomePage() {
         </motion.div>
       </section>
 
-      <section className="relative isolate overflow-hidden px-6 py-24 sm:px-10 lg:px-12 lg:py-32">
-        <Image
-          src="/images/story-leather-bg.png"
-          alt=""
-          fill
-          sizes="100vw"
-          className="pointer-events-none -z-10 object-cover object-center opacity-60"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(5,4,3,0.98)_0%,rgba(5,4,3,0.72)_54%,rgba(5,4,3,0.94)_100%)]"
-          aria-hidden="true"
-        />
+      <section className="border-t border-white/10 bg-[#101311] px-6 py-20 sm:px-10 lg:px-12 lg:py-24" data-site-scope="home-discover">
         <motion.div
-          className="mx-auto grid max-w-[100rem] gap-10 rounded-lg border border-white/16 bg-[#0e0906]/66 p-8 shadow-[0_28px_70px_rgba(0,0,0,0.3)] backdrop-blur-md sm:p-12 lg:grid-cols-[1fr_0.8fr] lg:p-16"
+          className="mx-auto grid max-w-[100rem] items-center gap-10 lg:grid-cols-[1fr_0.8fr] lg:gap-20"
           variants={stagger}
           initial={reduceMotion ? false : "hidden"}
           whileInView={reduceMotion ? undefined : "visible"}
           viewport={{ once: true, amount: 0.2 }}
         >
           <div>
-            <SectionEyebrow Icon={Sparkles}>Markets + Notes</SectionEyebrow>
-            <h2 className="font-display mt-7 text-5xl font-semibold leading-[0.96] text-white sm:text-6xl">
-              See the work in context.
+            <SectionEyebrow Icon={Sparkles}>Discover</SectionEyebrow>
+            <h2 className="font-display mt-7 text-5xl font-semibold leading-[1.1] text-white sm:text-6xl">
+              Beyond the apron.
             </h2>
-          </div>
-          <div className="self-end">
             <motion.p
-              className="text-lg leading-8 text-[#d8cabc] sm:text-xl"
+              className="mt-6 max-w-xl text-lg leading-8 text-[#d8cabc] sm:text-xl"
               variants={fadeUp}
             >
-              Market days, customer conversations, and custom builds shape the
-              next pieces. The events page collects the brand notes and practical
-              details behind the work.
+              Get closer to the leather and hardware, step inside the workshop,
+              or find Upgrade Aprons at a market. There is a story behind the work.
             </motion.p>
-            <Link
-              href="/events"
-              className="mt-9 inline-flex min-h-14 items-center justify-center rounded-md border border-[#d6a25f]/80 px-7 text-sm font-semibold uppercase tracking-[0.18em] text-[#e7ad61] transition duration-200 hover:-translate-y-0.5 hover:bg-[#d6a25f]/10"
-            >
-              View Events
+            <nav className="mt-8 divide-y divide-white/15 border-y border-white/15" aria-label="Discover Upgrade Aprons">
+              {discoverLinks.map(({ href, label }) => (
+                <Link key={href} href={href} className="flex min-h-16 items-center justify-between gap-4 py-4 text-lg text-[#e7ad61] transition-colors hover:text-white">
+                  {label}<ArrowRight size={20} className="shrink-0" aria-hidden="true" />
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <div>
+            <Link href="/leather-hardware" className="group block">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                <Image src="/images/materials/eyelet-and-woven-tie.webp" alt="Leather grain, red stitching, and a woven tie through a gold-tone eyelet" fill sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.02]" />
+              </div>
+              <span className="mt-4 flex items-center gap-3 text-sm text-[#d8cabc]">A closer look at the materials <ArrowRight size={17} aria-hidden="true" /></span>
             </Link>
           </div>
         </motion.div>
